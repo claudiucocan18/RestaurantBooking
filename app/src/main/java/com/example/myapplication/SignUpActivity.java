@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +18,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,6 +33,9 @@ public class SignUpActivity extends AppCompatActivity {
     EditText username, password, repassword;
     Button signbtn;
     DBHelper DB;
+    private FirebaseAuth mAuth;
+    private static final String TAG = "SigninActivity";
+
     //SmsBroadcastReceiver smsBroadcastReceiver;
 
 
@@ -32,71 +44,83 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        mAuth = FirebaseAuth.getInstance();
         username = findViewById(R.id.UsernameEdit);
         password = findViewById(R.id.PasswordEdit);
         repassword = findViewById(R.id.RePasswordEdit);
         signbtn = findViewById(R.id.signbtn);
-        DB = new DBHelper(this);
+        //DB = new DBHelper(this);
 
        //startSmartUserConsent();
 
         signbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            String user= username.getText().toString();
-            String pass= password.getText().toString();
-            String repass= repassword.getText().toString();
-
-                //openSmsActivity();
+                                       @Override
+                                       public void onClick(View v) {
+                                           String user = username.getText().toString();
+                                           String pass = password.getText().toString();
+                                           String repass = repassword.getText().toString();
 
 
+    if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass)) {
 
-            if(TextUtils.isEmpty(user)||TextUtils.isEmpty(pass)||TextUtils.isEmpty(repass))
-            {
-                Toast.makeText(SignUpActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
-            }
+        Toast.makeText(SignUpActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
+    }
 
-            else {
-                if (pass.equals(repass)) {
-                    Boolean checkuser = DB.checkusername(user);
-                    if (checkuser == false) {
-                        Boolean insert = DB.insertData(user, pass, "Default");
-                        if (insert == true) {
-                            Toast.makeText(SignUpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+        else {
+            if (pass.equals(repass)) {
 
-                            //openSmsActivity();
 
-                        } else {
-                            Toast.makeText(SignUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                        if (pass.length() >= 6) {
+
+                            signUpUser(mAuth, user, pass);
                         }
-                    }
-                        else {
-                                Toast.makeText(SignUpActivity.this, "User already exists", Toast.LENGTH_SHORT).show();
-                             }
+
+
+                        else {Toast.makeText(SignUpActivity.this, "Passwords must contain at least 6 characters", Toast.LENGTH_SHORT).show();}
+
                 }
-                else {
-                    Toast.makeText(SignUpActivity.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
-                    }
-            }
+                    else{ Toast.makeText(SignUpActivity.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();}
+                }
             }
         });
 
+    }
+
+    private void signUpUser(FirebaseAuth mAuth,String user, String pass) {
+        mAuth.createUserWithEmailAndPassword(user, pass)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            enterApp();
+                        }
+                        else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            if(!user.contains("@") || !user.contains(".com")
+                                    || (!user.contains("yahoo") || !user.contains("gmail")) )
+                            {
+                                Toast.makeText(SignUpActivity.this, "Incorrect email address ", Toast.LENGTH_SHORT).show();
+                            }
+                            //Toast.makeText(SignUpActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+    }
+
+    private void enterApp() {
+
+        Intent intentSignUp= new Intent(this,ListActivity.class);
+        startActivity(intentSignUp);
 
     }
 
-    /*private void openSmsActivity() {
-
-        Intent intent5 = new Intent(this,SmsVerificationActivity.class);
-
-        startActivity(intent5);
-
-    }*/
-
-
-
-
-
-
+    };
 
 
 
@@ -162,4 +186,3 @@ public class SignUpActivity extends AppCompatActivity {
         super.onStop();
         unregisterReceiver(smsBroadcastReceiver);
     }*/
-}
