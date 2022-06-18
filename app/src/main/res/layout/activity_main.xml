@@ -24,6 +24,7 @@
         android:layout_marginTop="250dp"
         android:fontFamily="cursive"
         android:text="Welcome"
+
         android:textColor="#89C6C3"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:width="230dp"
         android:fontFamily="@font/basic"
-        android:text="Sign in"
+        android:text="Create account"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:cornerRadius="200dp"

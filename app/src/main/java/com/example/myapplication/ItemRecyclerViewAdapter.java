@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -81,6 +82,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView textNrLocuri, textNume, textOrar, textZona, textAdresa;
         ImageView imageView3;
+        Button buttonRezerva;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -93,6 +95,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
             imageView3 = itemView.findViewById(R.id.imageView3);
 
+            buttonRezerva= itemView.findViewById(R.id.buttonRezerva);
 
 
         }
