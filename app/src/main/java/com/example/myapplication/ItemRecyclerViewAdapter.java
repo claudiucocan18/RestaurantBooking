@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
 import android.content.Context;
+
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +32,9 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
     private static final String TAG ="ItemRecyclerViewAdapter";
     Context context;
-    List<Restaurant> listaRestaurante;
+    public List<Restaurant> listaRestaurante;
+
+
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
    // StorageReference storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com");
@@ -38,6 +43,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     public ItemRecyclerViewAdapter(Context context, ArrayList<Restaurant> listaRestaurante) {
         this.context = context;
         this.listaRestaurante = listaRestaurante;
+
     }
 
     @NonNull
@@ -47,13 +53,11 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_row,parent,false);
-        return new ItemRecyclerViewAdapter.MyViewHolder(view);
+        return new ItemRecyclerViewAdapter.MyViewHolder(view,listaRestaurante);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemRecyclerViewAdapter.MyViewHolder holder, int position) {
-
-
 
 
         holder.textNume.setText(listaRestaurante.get(position).getNume());
@@ -73,10 +77,15 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         Log.e("dddddddddd",listaRestaurante.get(position).getImgURL());
 
     }
+public static List<Restaurant> getRestaurantList(){
+        return getRestaurantList();
 
+}
     @Override
     public int getItemCount() {
+
         return listaRestaurante.size();
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -84,7 +93,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         ImageView imageView3;
         Button buttonRezerva;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, List<Restaurant> listaRestaurante) {
             super(itemView);
 
             textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
@@ -92,12 +101,22 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
             textOrar= itemView.findViewById(R.id.textOrar) ;
             textZona = itemView.findViewById(R.id.textZona) ;
             textAdresa = itemView.findViewById(R.id.textAdresa) ;
-
             imageView3 = itemView.findViewById(R.id.imageView3);
-
             buttonRezerva= itemView.findViewById(R.id.buttonRezerva);
 
+buttonRezerva.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
 
-        }
+        Restaurant r = listaRestaurante.get(MyViewHolder.this.getLayoutPosition());
+        Intent intent3 = new Intent(view.getContext(),ReservationActivity.class);
+        intent3.putExtra("restaurant",(Parcelable) r );
+        view.getContext().startActivity(intent3);
     }
-}
+});
+            }
+
+    }
+
+    }
+

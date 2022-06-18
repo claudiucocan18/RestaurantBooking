@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
-public class Restaurant {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Restaurant implements Parcelable {
 
 String imgURL;
 String nume;
@@ -23,6 +26,27 @@ String adresa;
         this.adresa = adresa;
     }
 
+
+    protected Restaurant(Parcel in) {
+        imgURL = in.readString();
+        nume = in.readString();
+        nr_locuri = in.readInt();
+        orar = in.readString();
+        zona = in.readString();
+        adresa = in.readString();
+    }
+
+    public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
+        @Override
+        public Restaurant createFromParcel(Parcel in) {
+            return new Restaurant(in);
+        }
+
+        @Override
+        public Restaurant[] newArray(int size) {
+            return new Restaurant[size];
+        }
+    };
 
     public String getNume() {
         return nume;
@@ -70,5 +94,32 @@ String adresa;
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(imgURL);
+        parcel.writeString(nume);
+        parcel.writeInt(nr_locuri);
+        parcel.writeString(orar);
+        parcel.writeString(zona);
+        parcel.writeString(adresa);
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "imgURL='" + imgURL + '\'' +
+                ", nume='" + nume + '\'' +
+                ", nr_locuri=" + nr_locuri +
+                ", orar='" + orar + '\'' +
+                ", zona='" + zona + '\'' +
+                ", adresa='" + adresa + '\'' +
+                '}';
     }
 }

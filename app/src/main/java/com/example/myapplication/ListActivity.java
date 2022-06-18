@@ -74,48 +74,28 @@ public class ListActivity extends AppCompatActivity {
                         }
                     }
                 });
-    /*
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
 
-                                restaurant.nume ="f";// document.getData().get("nume").toString();
-
-                                Log.e("taguletttttttt",document.getData().get("nume").toString());
-
-                                restaurant.imgURL ="gs://restaurantappusers-adf69.appspot.com/default.png"; //document.toObject(Restaurant.class).getImgURL();
-                                restaurant.adresa = "f";//document.toObject(Restaurant.class).getAdresa();
-                                restaurant.nr_locuri = 2;//document.toObject(Restaurant.class).getNr_locuri();
-                                restaurant.orar ="f"; //document.toObject(Restaurant.class).getOrar();
-                                restaurant.zona ="f"; //document.toObject(Restaurant.class).getZona();
-
-                                listaRestaurante.add(restaurant);
-
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-                });*/
 
         recyclerView = findViewById(R.id.recycler_view);
-        //Restaurant restaurant2= new Restaurant("gs://restaurantappusers-adf69.appspot.com/default.png"
-               // ,"w",3,"e","e","d");
-        //listaRestaurante.add(restaurant);
-
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-
-
+        adaugareRestaurant();
 
     }
+    private void adaugareRestaurant()
+    {
+        Restaurant restaurant2= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
+                ,"w",3,"e","e","d");
+        listaRestaurante.add(restaurant2);
 
+        Restaurant restaurant3= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/restaurant-and-bar-logo-and-element_173667-original%20(1).jpg?alt=media&token=4d6d7893-b26c-484a-a279-652bd6c93d0c"
+                ,"west",3,"e","e","d");
+        listaRestaurante.add(restaurant3);
+    }
+
+    private void navigareRezervare()
+    {
+       listaRestaurante.get(0);
+    }
 }
