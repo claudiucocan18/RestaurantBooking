@@ -104,13 +104,13 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/buttonRezerva"
+                android:id="@+id/butonSpreRezervare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoText="false"
                 android:backgroundTint="#89C6C3"
                 android:elegantTextHeight="false"
-                android:text="Rezerva"
+                android:text="Către rezervare"
                 android:textAlignment="viewEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="16sp" />

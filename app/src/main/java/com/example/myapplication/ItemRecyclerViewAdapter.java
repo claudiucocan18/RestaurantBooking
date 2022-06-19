@@ -3,9 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -99,7 +93,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
             //textZona = itemView.findViewById(R.id.textZona) ;
             textAdresa = itemView.findViewById(R.id.textAdresa) ;
             imageView3 = itemView.findViewById(R.id.imageView3);
-            buttonRezerva= itemView.findViewById(R.id.buttonRezerva);
+            buttonRezerva= itemView.findViewById(R.id.butonSpreRezervare);
 
 buttonRezerva.setOnClickListener(new View.OnClickListener() {
     @Override
