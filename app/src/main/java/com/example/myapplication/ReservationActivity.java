@@ -9,9 +9,6 @@ import javax.xml.transform.Source;
 
 public class ReservationActivity extends AppCompatActivity {
 
-    Intent i = getIntent();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

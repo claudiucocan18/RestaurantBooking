@@ -61,26 +61,23 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
 
         holder.textNume.setText(listaRestaurante.get(position).getNume());
-        Log.e("dddddddddd",holder.textNume.getText().toString());
-        holder.textAdresa.setText(listaRestaurante.get(position).getAdresa());
-        holder.textNrLocuri.setText(String.valueOf(listaRestaurante.get(position).getNr_locuri()));
-        holder.textOrar.setText(listaRestaurante.get(position).getOrar());
-        holder.textZona.setText(listaRestaurante.get(position).getZona());
 
-        Log.e("dddddddddd",holder.textZona.getText().toString());
+        holder.textAdresa.setText(listaRestaurante.get(position).getAdresa());
+       // holder.textNrLocuri.setText(String.valueOf(listaRestaurante.get(position).getNr_locuri()));
+        holder.textOrar.setText(listaRestaurante.get(position).getOrar());
+        //holder.textZona.setText(listaRestaurante.get(position).getZona());
+
+
         StorageReference storageRef;//image storage
        // storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com")
         Picasso.get().load(listaRestaurante.get(position).getImgURL())
                 .placeholder(R.drawable.default_vector_placeholder)
                 .into(holder.imageView3);
 
-        Log.e("dddddddddd",listaRestaurante.get(position).getImgURL());
+
 
     }
-public static List<Restaurant> getRestaurantList(){
-        return getRestaurantList();
 
-}
     @Override
     public int getItemCount() {
 
@@ -96,10 +93,10 @@ public static List<Restaurant> getRestaurantList(){
         public MyViewHolder(@NonNull View itemView, List<Restaurant> listaRestaurante) {
             super(itemView);
 
-            textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
+            //textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
             textNume = itemView.findViewById(R.id.textNume) ;
             textOrar= itemView.findViewById(R.id.textOrar) ;
-            textZona = itemView.findViewById(R.id.textZona) ;
+            //textZona = itemView.findViewById(R.id.textZona) ;
             textAdresa = itemView.findViewById(R.id.textAdresa) ;
             imageView3 = itemView.findViewById(R.id.imageView3);
             buttonRezerva= itemView.findViewById(R.id.buttonRezerva);
