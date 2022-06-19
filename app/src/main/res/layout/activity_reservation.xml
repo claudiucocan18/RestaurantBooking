@@ -4,20 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     tools:context=".ReservationActivity">
 
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:isScrollContainer="true"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -58,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:contentDescription="Select the number of guests"
+            android:padding="10dp"
             android:spinnerMode="dialog" />
 
         <Spinner
@@ -65,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:contentDescription="Select the desired reservation time"
+            android:padding="10dp"
             android:spinnerMode="dialog" />
 
         <Button
@@ -77,4 +75,5 @@
 
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

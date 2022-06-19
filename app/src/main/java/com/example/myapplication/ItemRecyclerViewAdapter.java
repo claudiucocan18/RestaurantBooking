@@ -4,6 +4,7 @@ import android.content.Context;
 
 import android.content.Intent;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,8 +69,6 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
                 .placeholder(R.drawable.default_vector_placeholder)
                 .into(holder.imageView3);
 
-
-
     }
 
     @Override
@@ -84,7 +83,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         ImageView imageView3;
         Button buttonRezerva;
 
-        public MyViewHolder(@NonNull View itemView, List<Restaurant> listaRestaurante) {
+        public MyViewHolder(@NonNull View itemView, @NonNull List<Restaurant> listaRestaurante) {
             super(itemView);
 
             //textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
@@ -95,13 +94,22 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
             imageView3 = itemView.findViewById(R.id.imageView3);
             buttonRezerva= itemView.findViewById(R.id.butonSpreRezervare);
 
+
+
+
 buttonRezerva.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
 
         Restaurant r = listaRestaurante.get(MyViewHolder.this.getLayoutPosition());
+
+        Log.e("reservation Activity",r.nume+r.imgURL);
+        //Log.e("reservation Activity",r.getMese().get(0).toString());
+
         Intent intent3 = new Intent(view.getContext(),ReservationActivity.class);
         intent3.putExtra("restaurant",(Parcelable) r );
+
+        //intent3.putParcelableArrayListExtra("test", (ArrayList<Masa>) listaMese);
         view.getContext().startActivity(intent3);
     }
 });

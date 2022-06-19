@@ -2,28 +2,31 @@ package com.example.myapplication;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.List;
 
-public class Restaurant implements Parcelable {
+
+public class Restaurant implements Parcelable  {
+
 
 String imgURL;
 String nume;
 int nr_locuri;
 String orar;
-String zona;
 String adresa;
+
 
     public Restaurant() {
 
     }
 
-    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String zona, String adresa) {
+    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String adresa, List<Masa> mese) {
         //6
         this.imgURL = imgURL;
         this.nume = nume;
         this.nr_locuri = nr_locuri;
         this.orar = orar;
-        this.zona = zona;
         this.adresa = adresa;
+
     }
 
 
@@ -32,9 +35,9 @@ String adresa;
         nume = in.readString();
         nr_locuri = in.readInt();
         orar = in.readString();
-        zona = in.readString();
         adresa = in.readString();
     }
+
 
     public static final Creator<Restaurant> CREATOR = new Creator<Restaurant>() {
         @Override
@@ -56,6 +59,8 @@ String adresa;
         this.nume = nume;
     }
 
+
+
     public int getNr_locuri() {
         return nr_locuri;
     }
@@ -70,14 +75,6 @@ String adresa;
 
     public void setOrar(String orar) {
         this.orar = orar;
-    }
-
-    public String getZona() {
-        return zona;
-    }
-
-    public void setZona(String zona) {
-        this.zona = zona;
     }
 
     public String getAdresa() {
@@ -96,6 +93,18 @@ String adresa;
         this.imgURL = imgURL;
     }
 
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "imgURL='" + imgURL + '\'' +
+                ", nume='" + nume + '\'' +
+                ", nr_locuri=" + nr_locuri +
+                ", orar='" + orar + '\'' +
+                ", adresa='" + adresa + '\'' +
+                '}';
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -107,19 +116,6 @@ String adresa;
         parcel.writeString(nume);
         parcel.writeInt(nr_locuri);
         parcel.writeString(orar);
-        parcel.writeString(zona);
         parcel.writeString(adresa);
-    }
-
-    @Override
-    public String toString() {
-        return "Restaurant{" +
-                "imgURL='" + imgURL + '\'' +
-                ", nume='" + nume + '\'' +
-                ", nr_locuri=" + nr_locuri +
-                ", orar='" + orar + '\'' +
-                ", zona='" + zona + '\'' +
-                ", adresa='" + adresa + '\'' +
-                '}';
     }
 }

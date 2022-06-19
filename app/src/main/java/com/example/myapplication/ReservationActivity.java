@@ -3,28 +3,24 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
-import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
+
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.xml.transform.Source;
-
 public class ReservationActivity extends AppCompatActivity {
 
-    ///Calendar c;
-    //CalendarView calendarView = new CalendarView(this);
+    ImageView imageView4;
     CalendarView calendarView;
     Spinner spinnerMese, spinnerOre;
     List<Integer> vect = new ArrayList<Integer>();
@@ -35,22 +31,30 @@ public class ReservationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        Restaurant r1 = (Restaurant) getIntent().getParcelableExtra("restaurant");
+        Restaurant restaurant = (Restaurant) getIntent().getParcelableExtra("restaurant");
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
         spinnerMese = (Spinner) findViewById(R.id.spinnerMese);
         spinnerOre = (Spinner) findViewById(R.id.spinnerOre);
+        imageView4 = (ImageView) findViewById(R.id.imageView4);
+
+        StorageReference storageRef; //image storage
+
+        Picasso.get().load(restaurant.getImgURL())
+                .placeholder(R.drawable.default_vector_placeholder)
+                .into(imageView4);
+
+        //ArrayAdapter aa = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,vect);
+        ArrayAdapter<CharSequence> adapterOre = ArrayAdapter.createFromResource(this,R.array.arrayOre, android.R.layout.simple_spinner_item);
+        adapterOre.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<CharSequence> adapterMese = ArrayAdapter.createFromResource(this,R.array.arrayMese, android.R.layout.simple_spinner_item);
+        adapterMese.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
-        vect.add(1);
-        vect.add(2);
-        vect.add(3);
+        spinnerOre.setAdapter(adapterOre);
+        spinnerMese.setAdapter(adapterMese);
 
-        ArrayAdapter aa = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,vect);
-
-
-        spinnerMese.setAdapter(aa);
-        spinnerOre.setAdapter(aa);
 
         spinnerMese.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
