@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,73 +7,76 @@
     android:isScrollContainer="true"
     tools:context=".ReservationActivity">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:isScrollContainer="true"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView4"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Restaurant image"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:isScrollContainer="true"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewNume"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:text="nume_restaurant" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Restaurant image"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/textViewAdresa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="adresa_restaurant" />
+            <TextView
+                android:id="@+id/textViewNume"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:text="nume_restaurant" />
 
-        <TextView
-            android:id="@+id/textViewOrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="orar_restaurant" />
+            <TextView
+                android:id="@+id/textViewAdresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="adresa_restaurant" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textViewOrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="orar_restaurant" />
 
-
-            />
-
-        <Spinner
-            android:id="@+id/spinnerMese"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:contentDescription="Select the number of guests"
-            android:padding="10dp"
-            android:spinnerMode="dialog" />
-
-        <Spinner
-            android:id="@+id/spinnerOre"
-            android:layout_width="match_parent"
-            android:layout_height="69dp"
-            android:contentDescription="Select the desired reservation time"
-            android:padding="10dp"
-            android:spinnerMode="dialog" />
-
-        <Button
-            android:id="@+id/butonRezerva"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="49dp"
-            android:text="Rezervă"
-            tools:ignore="TouchTargetSizeCheck" />
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
 
-    </LinearLayout>
+                />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Spinner
+                android:id="@+id/spinnerMese"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:contentDescription="Select the number of guests"
+                android:padding="10dp"
+                android:spinnerMode="dialog" />
+
+            <Spinner
+                android:id="@+id/spinnerOre"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:contentDescription="Select the desired reservation time"
+                android:padding="10dp"
+                android:spinnerMode="dialog" />
+
+            <Button
+                android:id="@+id/butonRezerva"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="49dp"
+                android:text="Rezervă"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
