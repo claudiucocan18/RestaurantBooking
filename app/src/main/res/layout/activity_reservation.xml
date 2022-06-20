@@ -71,6 +71,8 @@
                 android:id="@+id/butonRezerva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:insetTop="1dp"
+                android:insetBottom="1dp"
                 android:minHeight="49dp"
                 android:text="Rezervă"
                 tools:ignore="TouchTargetSizeCheck" />
