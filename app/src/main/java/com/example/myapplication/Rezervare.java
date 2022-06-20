@@ -1,22 +1,26 @@
 package com.example.myapplication;
 
+import java.util.Objects;
+
 public class Rezervare {
 
     String numeRestaurant;
     String utilizator;
     String data;
     String adresaRestaurant;
+    String ora;
     int nrPersoane;
 
     public Rezervare() {
     }
 
-    public Rezervare(String numeRestaurant, String utilizator, String data, String adresaRestaurant, int nrPersoane) {
+    public Rezervare(String numeRestaurant, String utilizator, String data, String adresaRestaurant, String ora, int nrPersoane) {
         this.numeRestaurant = numeRestaurant;
         this.utilizator = utilizator;
         this.data = data;
         this.adresaRestaurant = adresaRestaurant;
         this.nrPersoane = nrPersoane;
+        this.ora = ora;
     }
 
     public String getNumeRestaurant() {
@@ -59,6 +63,14 @@ public class Rezervare {
         this.nrPersoane = nrPersoane;
     }
 
+    public String getOra() {
+        return ora;
+    }
+
+    public void setOra(String ora) {
+        this.ora = ora;
+    }
+
     @Override
     public String toString() {
         return "Rezervare{" +
@@ -66,7 +78,18 @@ public class Rezervare {
                 ", utilizator='" + utilizator + '\'' +
                 ", data='" + data + '\'' +
                 ", adresaRestaurant='" + adresaRestaurant + '\'' +
+                ", ora='" + ora + '\'' +
                 ", nrPersoane=" + nrPersoane +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rezervare rezervare = (Rezervare) o;
+        return nrPersoane == rezervare.nrPersoane && Objects.equals(numeRestaurant, rezervare.numeRestaurant) && Objects.equals(utilizator, rezervare.utilizator) && Objects.equals(data, rezervare.data) && Objects.equals(adresaRestaurant, rezervare.adresaRestaurant) && Objects.equals(ora, rezervare.ora);
+    }
+
+
 }

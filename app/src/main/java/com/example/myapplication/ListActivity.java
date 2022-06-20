@@ -8,17 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -55,6 +44,7 @@ public class ListActivity extends AppCompatActivity {
         Restaurant restaurant = new Restaurant();
 
 
+
         db.collection("restaurante")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -83,7 +73,8 @@ public class ListActivity extends AppCompatActivity {
                     }
                 });
 
-        db.collection("Mese")
+
+      /*  db.collection("Mese")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -104,7 +95,7 @@ public class ListActivity extends AppCompatActivity {
                         }
                     }
                 });
-
+*/
 /*
 
         db.collection("Mese")
