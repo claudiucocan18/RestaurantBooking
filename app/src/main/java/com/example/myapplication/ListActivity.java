@@ -5,8 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.button.MaterialButtonToggleGroup;
@@ -32,7 +36,7 @@ public class ListActivity extends AppCompatActivity {
     //DatabaseReference myRef = database.getReference("https://restaurantappusers-adf69-default-rtdb.europe-west1.firebasedatabase.app/");
 
     RecyclerView recyclerView;
-
+    Context context;
     ArrayList<Restaurant> listaRestaurante = new ArrayList<Restaurant>();
     List<Masa> listaMese = new ArrayList<Masa>();
     MaterialButtonToggleGroup btnGroup;
@@ -54,13 +58,32 @@ public class ListActivity extends AppCompatActivity {
 
 
         Restaurant restaurant = new Restaurant();
+
         btnGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                if(checkedId==R.id.btnHome)
-                { System.out.println("dsfvdfdd");}
+                switch(checkedId)
+                {
+                    case R.id.btnBookings:{
+
+                        Intent BookingsIntent = new Intent(group.getContext(),ViewBookingsActivity.class);
+                        startActivity(BookingsIntent);
+                        break;
+                    }
+                    case R.id.btnProfile: {
+
+                        Intent ProfileIntent = new Intent(group.getContext(),ViewProfileActivity.class);
+                        startActivity(ProfileIntent);
+                        break;
+
+                    }
+                    default: break;
+                }
             }
         });
+
+
+
 
 
         db.collection("restaurante")

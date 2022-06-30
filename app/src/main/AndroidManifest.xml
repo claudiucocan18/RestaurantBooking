@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ViewProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewBookingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ConfirmationActivity"
             android:exported="false" />
         <activity
