@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,6 +35,10 @@ public class ListActivity extends AppCompatActivity {
 
     ArrayList<Restaurant> listaRestaurante = new ArrayList<Restaurant>();
     List<Masa> listaMese = new ArrayList<Masa>();
+    MaterialButtonToggleGroup btnGroup;
+    Button btnHome, btnBookings,btnProfile;
+
+
 
     ItemRecyclerViewAdapter adapter = new ItemRecyclerViewAdapter(this,listaRestaurante);
 
@@ -40,8 +47,20 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        Restaurant restaurant = new Restaurant();
+        btnGroup = findViewById(R.id.btnGroup);
+        btnHome = findViewById(R.id.btnHome);
+        btnBookings = findViewById(R.id.btnBookings);
+        btnProfile = findViewById(R.id.btnProfile);
 
+
+        Restaurant restaurant = new Restaurant();
+        btnGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
+            @Override
+            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
+                if(checkedId==R.id.btnHome)
+                { System.out.println("dsfvdfdd");}
+            }
+        });
 
 
         db.collection("restaurante")
