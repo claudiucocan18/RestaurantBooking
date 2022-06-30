@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".ViewProfileActivity">
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/btnGroup3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:checkedButton="@id/btnProfile3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true"
+        >
+
+        <Button
+            android:id="@+id/btnHome3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/default_vector_placeholder"
+            app:iconGravity="textStart" />
+
+        <Button
+            android:id="@+id/btnBookings3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_baseline_bookmarks_24"
+            app:iconGravity="textStart" />
+
+        <Button
+            android:id="@+id/btnProfile3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_baseline_person_24"
+            app:iconGravity="textStart" />
+
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

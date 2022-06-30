@@ -67,17 +67,18 @@ public class ListActivity extends AppCompatActivity {
                     case R.id.btnBookings:{
 
                         Intent BookingsIntent = new Intent(group.getContext(),ViewBookingsActivity.class);
+                        BookingsIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(BookingsIntent);
                         break;
                     }
                     case R.id.btnProfile: {
 
                         Intent ProfileIntent = new Intent(group.getContext(),ViewProfileActivity.class);
+                        ProfileIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileIntent);
                         break;
 
                     }
-                    default: break;
                 }
             }
         });
