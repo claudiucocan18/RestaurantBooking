@@ -29,7 +29,9 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     Context context;
     public List<Restaurant> listaRestaurante;
 
-
+    public List<Restaurant> getListaRestaurante() {
+        return listaRestaurante;
+    }
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
    // StorageReference storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com");
@@ -82,10 +84,17 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         TextView textNrLocuri, textNume, textOrar, textZona, textAdresa;
         ImageView imageView3;
         Button buttonRezerva;
+        //////////////////////
+        List<Restaurant> lrvh;
+
+        public List<Restaurant> getLrvh() {
+            return lrvh;
+        }
 
         public MyViewHolder(@NonNull View itemView, @NonNull List<Restaurant> listaRestaurante) {
             super(itemView);
 
+            lrvh = listaRestaurante;
             //textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
             textNume = itemView.findViewById(R.id.textNume) ;
             textOrar= itemView.findViewById(R.id.textOrar) ;

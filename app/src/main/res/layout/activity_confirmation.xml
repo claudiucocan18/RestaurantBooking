@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConfirmationActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="252dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/cantata_one"
+        android:gravity="center"
+        android:text="Rezervarea a fost realizată"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/cantata_one"
+        android:gravity="center"
+        android:text="Mulțumim!"
+        android:textColor="#20BAB2"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="181dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cantata_one"
+        android:gravity="center"
+        android:text="Inapoi la ecranul principal"
+        android:textAllCaps="false" />
+</LinearLayout>

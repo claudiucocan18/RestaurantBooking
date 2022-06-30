@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
 import com.google.firebase.firestore.DocumentChange;
@@ -69,9 +68,10 @@ public class ListActivity extends AppCompatActivity {
 
                         }
 
-
                     }
+
                 });
+
 
 
       /*  db.collection("Mese")
@@ -123,6 +123,12 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adaugareRestaurant();
+        //List<Restaurant> lr = adapter.afisareListaRestaurante();
+
+        //System.out.println(lr);
+        List<Restaurant> lr = adapter.getListaRestaurante();
+        System.out.println(lr);
+
 
     }
 
