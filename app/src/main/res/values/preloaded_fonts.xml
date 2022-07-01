@@ -8,5 +8,7 @@
         <item>@font/alata</item>
         <item>@font/bevan</item>
         <item>@font/cantata_one</item>
+        <item>@font/inter_bold</item>
+        <item>@font/inter_semibold</item>
     </array>
 </resources>

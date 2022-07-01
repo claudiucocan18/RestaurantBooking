@@ -31,11 +31,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="181dp"
-        android:layout_height="68dp"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/cantata_one"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/round_border"
+        android:fontFamily="@font/inter_bold"
         android:gravity="center"
         android:text="Inapoi la ecranul principal"
         android:textAllCaps="false" />
