@@ -165,8 +165,8 @@ public class ReservationActivity extends AppCompatActivity {
             }
         });
 
-        String uniqueID = UUID.randomUUID().toString();
-        uniqueID = uniqueID.substring(0,5);
+       /* String uniqueID = UUID.randomUUID().toString();
+        uniqueID = uniqueID.substring(0,5);*/
       //  System.out.println(uniqueID.substring(0,5));
 /*
 

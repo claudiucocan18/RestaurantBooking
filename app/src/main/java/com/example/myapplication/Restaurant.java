@@ -19,7 +19,7 @@ String adresa;
 
     }
 
-    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String adresa, List<Masa> mese) {
+    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String adresa) {
         //6
         this.imgURL = imgURL;
         this.nume = nume;

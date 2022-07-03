@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Objects;
 
 public class Rezervare {
@@ -12,6 +15,7 @@ public class Rezervare {
     String nrPersoane;
     String user;
     Boolean aprobata;
+    String key;
 
     public Rezervare() {
 
@@ -25,7 +29,32 @@ public class Rezervare {
         this.ora = ora;
         this.aprobata=false;
         this.user=user;
+        this.key="default";
     }
+
+    public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user, String key) {
+        this.numeRestaurant = numeRestaurant;
+        this.data = data;
+        this.adresaRestaurant = adresaRestaurant;
+        this.nrPersoane = nrPersoane;
+        this.ora = ora;
+        this.aprobata=false;
+        this.user=user;
+        this.key=key;
+
+    }
+
+    protected Rezervare(Parcel in) {
+        numeRestaurant = in.readString();
+        data = in.readString();
+        adresaRestaurant = in.readString();
+        ora = in.readString();
+        nrPersoane = in.readString();
+        user = in.readString();
+        byte tmpAprobata = in.readByte();
+        aprobata = tmpAprobata == 0 ? null : tmpAprobata == 1;
+    }
+
 
     public String getNumeRestaurant() {
         return numeRestaurant;
@@ -83,6 +112,14 @@ public class Rezervare {
         this.aprobata = aprobata;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     @Override
     public String toString() {
         return "Rezervare{" +
@@ -102,6 +139,5 @@ public class Rezervare {
         Rezervare rezervare = (Rezervare) o;
         return Objects.equals(numeRestaurant, rezervare.numeRestaurant) && Objects.equals(data, rezervare.data) && Objects.equals(adresaRestaurant, rezervare.adresaRestaurant) && Objects.equals(ora, rezervare.ora) && Objects.equals(nrPersoane, rezervare.nrPersoane) && Objects.equals(user, rezervare.user) && Objects.equals(aprobata, rezervare.aprobata);
     }
-
 
 }
