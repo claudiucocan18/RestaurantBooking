@@ -38,7 +38,6 @@ public class ListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Context context;
     ArrayList<Restaurant> listaRestaurante = new ArrayList<Restaurant>();
-    List<Masa> listaMese = new ArrayList<Masa>();
     MaterialButtonToggleGroup btnGroup;
     Button btnHome, btnBookings,btnProfile;
 
@@ -168,40 +167,29 @@ public class ListActivity extends AppCompatActivity {
         adaugareRestaurant();
         //List<Restaurant> lr = adapter.afisareListaRestaurante();
 
-        //System.out.println(lr);
-        List<Restaurant> lr = adapter.getListaRestaurante();
-        System.out.println(lr);
-
 
     }
 
 
     private void adaugareRestaurant()
     {
-        List<Masa> listaMese2 = new ArrayList<Masa>();
-        Masa m1 = new Masa(true,2);
-        Masa m2 = new Masa(true,3);
-        Masa m3 = new Masa(true,4);
-        Masa m4 = new Masa(true,5);
 
-        listaMese2.add(m1);
-        listaMese2.add(m2);
-        listaMese2.add(m3);
-        listaMese2.add(m4);
+
+
 
         Restaurant restaurant2= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
-                ,"w",3,"e","d",listaMese2);
+                ,"w",3,"e","d");
         listaRestaurante.add(restaurant2);
 
         Restaurant restaurant3= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/restaurant-and-bar-logo-and-element_173667-original%20(1).jpg?alt=media&token=4d6d7893-b26c-484a-a279-652bd6c93d0c"
-                ,"west",3,"e","d",listaMese2);
+                ,"west",3,"e","d");
         listaRestaurante.add(restaurant3);
         Restaurant restaurant4= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
-                ,"w",3,"e","d",listaMese2);
+                ,"w",3,"e","d");
         listaRestaurante.add(restaurant4);
 
         Restaurant restaurant5= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/restaurant-and-bar-logo-and-element_173667-original%20(1).jpg?alt=media&token=4d6d7893-b26c-484a-a279-652bd6c93d0c"
-                ,"west",5,"e","d",listaMese2);
+                ,"west",5,"e","d");
         listaRestaurante.add(restaurant3);
 
 

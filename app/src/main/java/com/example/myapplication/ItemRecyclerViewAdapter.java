@@ -29,9 +29,6 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     Context context;
     public List<Restaurant> listaRestaurante;
 
-    public List<Restaurant> getListaRestaurante() {
-        return listaRestaurante;
-    }
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
    // StorageReference storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com");
@@ -112,13 +109,9 @@ buttonRezerva.setOnClickListener(new View.OnClickListener() {
 
         Restaurant r = listaRestaurante.get(MyViewHolder.this.getLayoutPosition());
 
-        Log.e("reservation Activity",r.nume+r.imgURL);
-        //Log.e("reservation Activity",r.getMese().get(0).toString());
-
         Intent intent3 = new Intent(view.getContext(),ReservationActivity.class);
         intent3.putExtra("restaurant",(Parcelable) r );
 
-        //intent3.putParcelableArrayListExtra("test", (ArrayList<Masa>) listaMese);
         view.getContext().startActivity(intent3);
     }
 });
