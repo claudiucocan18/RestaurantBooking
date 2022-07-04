@@ -15,9 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:visibility="visible"
-        android:layout_marginTop="10dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#1755BF"
         app:strokeWidth="13dp">
 

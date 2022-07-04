@@ -12,6 +12,7 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border.xml" value="0.142" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border_red_button.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_confirmation.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_list.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
@@ -22,7 +23,7 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_sms_verification.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_bookings.xml" value="0.2" />
-        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_profile.xml" value="0.13385416666666666" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_profile.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/booking_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/defwd.xml" value="0.20697463768115942" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/frfs.xml" value="0.19074074074074074" />
