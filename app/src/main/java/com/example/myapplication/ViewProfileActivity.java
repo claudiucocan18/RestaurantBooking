@@ -24,8 +24,8 @@ public class ViewProfileActivity extends AppCompatActivity {
 
 
         MaterialButtonToggleGroup btnGroup3;
-        Button btnHome3,btnBookings3, btnProfile3, butonDelogare, butonSchimbaEmail, butonSchimbaParola;
-        EditText editParolaProfil, editEmailProfil;
+        Button btnHome3,btnBookings3, btnProfile3, butonDelogare, butonSchimbaParola;
+        EditText editParolaProfil;
         TextView textEmailProfil;
 
 
@@ -34,22 +34,54 @@ public class ViewProfileActivity extends AppCompatActivity {
         btnBookings3 = findViewById(R.id.btnBookings3);
         btnProfile3 = findViewById(R.id.btnProfile3);
         butonDelogare = findViewById(R.id.butonDelogare);
-        butonSchimbaEmail = findViewById(R.id.butonSchimbaEmail);
+
         butonSchimbaParola = findViewById(R.id.butonSchimbaParola);
         textEmailProfil = findViewById(R.id.textEmailProfil);
-        editParolaProfil = findViewById(R.id.editParolaProfil);
-        editEmailProfil = findViewById(R.id.editEmailProfil);
+         editParolaProfil = findViewById(R.id.editParolaProfil);
+        /*editEmailProfil = findViewById(R.id.editEmailProfil);
+        butonSchimbaEmail = findViewById(R.id.butonSchimbaEmail);*/
 
         textEmailProfil.setText(mAuth.getCurrentUser().getEmail());
 
-        butonSchimbaEmail.setOnClickListener(new View.OnClickListener() {
+        butonSchimbaParola.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !editParolaProfil.getText().toString().isEmpty()) {
+
+                    if (editParolaProfil.getText().length() >= 6) {
+
+                        mAuth.getCurrentUser().updatePassword(editParolaProfil.getText().toString());
+                        Toast.makeText(ViewProfileActivity.this, "Parola a fost schimbată cu succes", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(ViewProfileActivity.this, "Parola trebuie să conțină minim 6 caractere", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                 else {
+                        Toast.makeText(ViewProfileActivity.this, "Introduceți noua parolă", Toast.LENGTH_SHORT).show();
+                    }
+
+
+            }
+        });
+
+        butonDelogare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                Intent intentSignedOut = new Intent(view.getContext(),MainActivity.class);
+                startActivity(intentSignedOut);
+            }
+        });
+
+       /* butonSchimbaEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if( !editEmailProfil.getText().toString().isEmpty()) {
-                    /*if (editEmailProfil.getText().toString().contains("@")
+                    *//*if (editEmailProfil.getText().toString().contains("@")
                             && !editEmailProfil.getText().toString().contains(".com")
                             && (!editEmailProfil.getText().toString().contains("yahoo")
-                            || !editEmailProfil.getText().toString().contains("gmail"))) {*/
+                            || !editEmailProfil.getText().toString().contains("gmail"))) {*//*
 
                         mAuth.getCurrentUser().updateEmail(editEmailProfil.getText().toString());
                         textEmailProfil.setText(mAuth.getCurrentUser().getEmail());
@@ -59,13 +91,13 @@ public class ViewProfileActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         startActivity(getIntent());
                         overridePendingTransition(0, 0);
-                    /*}*/
+                    *//*}*//*
                 }
                 else {
                     Toast.makeText(ViewProfileActivity.this, "Introduceți noua adresă de e-mail", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
         btnGroup3.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
@@ -91,6 +123,7 @@ public class ViewProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
 
 
     }
