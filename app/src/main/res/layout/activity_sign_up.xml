@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="10dp"
     tools:context=".SignUpActivity">
+
 
     <TextView
         android:id="@+id/SignTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="140dp"
         android:fontFamily="cursive"
         android:gravity="center_horizontal|center_vertical"
         android:text="Sign up"
         android:textColor="#89C6C3"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/UsernameEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_border"
         android:layout_marginTop="32dp"
         android:width="230dp"
+        android:background="@drawable/round_border"
         android:hint="Email"
-        android:minHeight="48dp"
         android:inputType="textWebEmailAddress"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignTitle">
@@ -40,14 +43,15 @@
 
     <EditText
         android:id="@+id/PasswordEdit"
-        android:background="@drawable/round_border"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:width="230dp"
+        android:background="@drawable/round_border"
         android:hint="Password"
-        android:minHeight="48dp"
         android:inputType="textWebPassword"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UsernameEdit">
@@ -56,30 +60,86 @@
 
     <EditText
         android:id="@+id/RePasswordEdit"
-        android:background="@drawable/round_border"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:width="230dp"
+        android:background="@drawable/round_border"
         android:hint="Retype Password"
-        android:minHeight="48dp"
         android:inputType="textWebPassword"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordEdit">
 
     </EditText>
 
+    <LinearLayout
+        android:id="@+id/layoutSwitch"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RePasswordEdit">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/switchStateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:paddingStart="10dp"
+            android:text="Client"
+            android:textSize="16sp" />
+
+        <!--<Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:showText="false"
+            android:textOff="Client"
+            android:textOn="Manager" />-->
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/signbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#89C6C3"
         android:text="Sign up"
         android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/cuiEdit"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:width="230dp"
+        android:background="@drawable/round_border"
+        android:hint="CUI firmă"
+        android:inputType="textWebPassword"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RePasswordEdit" />
+        app:layout_constraintTop_toBottomOf="@id/layoutSwitch">
+
+    </EditText>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

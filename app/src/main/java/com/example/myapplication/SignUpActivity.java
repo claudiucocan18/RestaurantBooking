@@ -9,11 +9,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.phone.SmsRetriever;
@@ -30,12 +36,17 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
 
     //private static final int REQ_USER_CONSENT=200;
-    EditText username, password, repassword;
+    EditText username, password, repassword, cuiEdit;
     Button signbtn;
+    Switch switch1;
+    CheckBox checkBox;
+    TextView switchStateText;
+    Utilizator utilizator;
     DBHelper DB;
     private FirebaseAuth mAuth;
     private static final String TAG = "SigninActivity";
 
+    DaoUtilizator daoUtilizator = new DaoUtilizator();
     //SmsBroadcastReceiver smsBroadcastReceiver;
 
 
@@ -49,9 +60,60 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.PasswordEdit);
         repassword = findViewById(R.id.RePasswordEdit);
         signbtn = findViewById(R.id.signbtn);
+        checkBox=findViewById(R.id.checkbox);
+        cuiEdit= findViewById(R.id.cuiEdit);
+       //switch1=findViewById(R.id.switch1);
+
+        switchStateText=findViewById(R.id.switchStateText);
+
+
         //DB = new DBHelper(this);
 
        //startSmartUserConsent();
+
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(checkBox.isChecked())
+                {
+                    switchStateText.setText("Manager");
+                    cuiEdit.setVisibility(View.VISIBLE);
+
+                }
+                else
+                {
+                    switchStateText.setText("Client");
+                    cuiEdit.setVisibility(View.GONE);
+
+                }
+
+
+            }
+        });
+
+
+/*switch1.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b==true)
+                {
+                    System.out.println("Manageeeeeeeer");
+                    switchStateText.setText("Manager");
+                }
+                if(b==false)
+                {
+                    System.out.println("Client");
+                    switchStateText.setText("Client");
+                }
+
+            }
+        });
+    }
+});*/
 
         signbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
@@ -59,20 +121,35 @@ public class SignUpActivity extends AppCompatActivity {
                                            String user = username.getText().toString();
                                            String pass = password.getText().toString();
                                            String repass = repassword.getText().toString();
-
+                                           String tipCont = switchStateText.getText().toString();
+                                           String cui = cuiEdit.getText().toString();
 
     if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass)) {
 
         Toast.makeText(SignUpActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
+
+
     }
 
         else {
             if (pass.equals(repass)) {
 
+                if (pass.length() >= 6) {
 
-                        if (pass.length() >= 6) {
-
+                            if( cuiEdit.getVisibility() !=View.GONE && TextUtils.isEmpty(cui)) {
+                                Toast.makeText(SignUpActivity.this, "Codul CUI este obligatoriu pentru manageri", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
                             signUpUser(mAuth, user, pass);
+                            //client sau manager pt constructor Utilizator
+                            if(tipCont == "Client"){
+                                 utilizator = new Utilizator(user, pass, tipCont);
+                            }
+                            else {
+                                utilizator = new Utilizator(user, pass, tipCont, cui);
+                            }
+
+                            daoUtilizator.add(utilizator);}
                         }
 
 

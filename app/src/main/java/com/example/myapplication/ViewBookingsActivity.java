@@ -27,7 +27,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
     String ora;
     String nrPersoane;
     String user;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
     @Override
@@ -106,7 +106,6 @@ public class ViewBookingsActivity extends AppCompatActivity {
                 }
 
                 adapterBooking.notifyDataSetChanged();
-                System.out.println(listaRez);
 
             }
 
