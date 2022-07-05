@@ -142,7 +142,7 @@ public class LogInActivity extends AppCompatActivity {
             startActivity(intentLogIn1);
         }
         else if( tipUserIntrodus.equals("Manager") ) {
-            Intent intentLogIn2 = new Intent(this, ViewProfileActivity.class);
+            Intent intentLogIn2 = new Intent(this, ManagerViewProfileActivity.class);
             startActivity(intentLogIn2);
         }
     }

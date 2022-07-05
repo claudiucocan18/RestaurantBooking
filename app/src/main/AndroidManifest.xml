@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ManagerViewProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerBookingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewProfileActivity"
             android:exported="true" />
         <activity
@@ -36,15 +45,10 @@
             android:exported="false" />
         <activity
             android:name=".LogInActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
