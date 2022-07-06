@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.button.MaterialButtonToggleGroup;
 
@@ -12,6 +14,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
 
     MaterialButtonToggleGroup btnGroupManager;
     Button btnHomeManager, btnBookingsManager,btnProfileManager;
+    ImageButton imageSelector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,14 @@ public class ManagerHomeActivity extends AppCompatActivity {
         btnHomeManager = findViewById(R.id.btnHomeManager);
         btnBookingsManager = findViewById(R.id.btnBookingsManager);
         btnProfileManager = findViewById(R.id.btnProfileManager);
+        imageSelector = findViewById(R.id.imageSelector);
 
+        imageSelector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         btnGroupManager.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
