@@ -27,6 +27,7 @@ import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -42,6 +43,7 @@ import java.util.UUID;
 
 public class ManagerHomeActivity extends AppCompatActivity {
 
+    private static final String TAG = "ManagerHomeActivity";
     MaterialButtonToggleGroup btnGroupManager;
     Button btnHomeManager, btnBookingsManager,btnProfileManager,addRestaurantButton;
     EditText addRestaurantNameEdit, addOrarEdit, addAdresaEdit, addNumarLocuriEdit  ;
@@ -98,7 +100,6 @@ public class ManagerHomeActivity extends AppCompatActivity {
             Picasso.get().load(s)
                     .placeholder(R.drawable.default_vector_placeholder)
                     .into(imageSelector);
-            addNumarLocuriEdit.setText(s);
 
         }
         System.out.println("4 " + s);
@@ -155,7 +156,6 @@ public class ManagerHomeActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                        System.out.println("Numele ultimului restaurant gasit: " + rp.getNume());
                     }
                 });
 
@@ -172,6 +172,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
 
         });
 
+
         addRestaurantButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,26 +180,55 @@ public class ManagerHomeActivity extends AppCompatActivity {
                String strNume = addRestaurantNameEdit.getText().toString();
                String strOrar = addOrarEdit.getText().toString();
                String strAdresa = addAdresaEdit.getText().toString();
-               int strNumarLocuri =Integer.valueOf(addNumarLocuriEdit.getText().toString());
+               String strNumarLocuri =addNumarLocuriEdit.getText().toString();
                String strlinkImagine = hiddenLinkTextView.getText().toString();
                String strManager = mAuth.getCurrentUser().getEmail();
 
-                /*if(!(strNume.isEmpty() || strOrar.isEmpty()
-                        || strAdresa.isEmpty() || strNumarLocuri.isEmpty()
-                        ||linkImagine.isEmpty())){*/
-                    if(gasit == 0 ){
-                        System.out.println("Nu avem restaurant deja in DB.");
+               System.out.println(strNume+" "+strOrar+strAdresa+" "+strNumarLocuri+" "+strlinkImagine+" "+strManager);
+               Log.e("date restaurant",strNume+" "+strOrar+strAdresa+" "+strNumarLocuri+" "+s+" "+strManager);
+
+               if(!(strNume.isEmpty() || strOrar.isEmpty()
+                        || strAdresa.isEmpty() || strNumarLocuri.isEmpty())){
+
+                    if(gasit == 0 ) {
+
+                        if (s != null){
+                            System.out.println("Nu avem restaurant deja in DB.");
+                        System.out.println(strNume + " " + strOrar + strAdresa + " " + strNumarLocuri + " " + strlinkImagine + " " + strManager);
+
+                        Restaurant restaurantNou = new Restaurant(s, strNume,
+                                Integer.parseInt(strNumarLocuri), strOrar, strAdresa, strManager);
+
+                        db.collection("restaurante")
+                                .add(restaurantNou)
+                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                        Toast.makeText(ManagerHomeActivity.this, "Restaurantul a fost adăugat", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error adding document", e);
+                                    }
+                                });
 
                     }else{
+                            Toast.makeText(ManagerHomeActivity.this, "Încarcă o imagine", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }else if(!strlinkImagine.isEmpty()){
                         System.out.println("Exista restaurantul in DB, editam valorile.");
-                        rp.setNume(strNume);
+                        /*rp.setNume(strNume);
                         rp.setOrar(strOrar);
                         rp.setAdresa(strAdresa);
                         rp.setNr_locuri(strNumarLocuri);
-                        rp.setImgURL(strlinkImagine);
+                        rp.setImgURL(strlinkImagine);*/
 
                         //rp.setManager(strManager); Pe manager nu il editam aici, doar in ala nou
-                        //System.out.println(strNume+" "+strOrar+strAdresa+" "+strNumarLocuri+" "+strlinkImagine+" "+strManager);
+                        System.out.println(strNume+" "+strOrar+strAdresa+" "+strNumarLocuri+" "+strlinkImagine+" "+strManager);
 
                         db.collection("restaurante")
                                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -215,21 +245,29 @@ public class ManagerHomeActivity extends AppCompatActivity {
                                                 rp = dc.getDocument().toObject(Restaurant.class);
 
                                                 if (rp.getManager().equals(mAuth.getCurrentUser().getEmail())) {
+                                                    dc.getDocument().getReference().update("nume", strNume);
+                                                    dc.getDocument().getReference().update("orar", strOrar);
+                                                    dc.getDocument().getReference().update("adresa", strAdresa);
+                                                    dc.getDocument().getReference().update("nr_locuri", Integer.valueOf(strNumarLocuri));
                                                     dc.getDocument().getReference().update("imgURL", strlinkImagine);
+                                                    Toast.makeText(ManagerHomeActivity.this, "Restaurantul a fost editat", Toast.LENGTH_SHORT).show();
+
                                                 }
                                             }
                                         }
                                     }
                                 });
+                    }else{
+                        Toast.makeText(ManagerHomeActivity.this, "Încarcă o imagine. Imaginea nu a fost găsită", Toast.LENGTH_SHORT).show();
                     }
 
 
 
-                /*}else{
+                }else{
                     Toast.makeText(ManagerHomeActivity.this,
-                            "Introduceți toate datele și adăugați o poză",
+                            "Introduceți toate datele și adăugați o imagine",
                             Toast.LENGTH_SHORT).show();
-                }*/
+                }
 
             }
         });

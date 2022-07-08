@@ -22,28 +22,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/numeRestaurantLabel"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:fontFamily="@font/inter_semibold"
-                android:text="Nume restaurant"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/addRestaurantNameEdit"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_border"
-                android:minHeight="55dp"
-                android:padding="10dp"></EditText>
-
-            <TextView
                 android:id="@+id/pozaRestaurantLabel"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="45dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Poza"
                 android:textSize="18sp"
@@ -56,6 +38,24 @@
                 android:background="#ECEBEB"
                 android:scaleType="center"
                 android:src="@drawable/ic_baseline_add_box_24" />
+
+            <TextView
+                android:id="@+id/numeRestaurantLabel"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Nume restaurant"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/addRestaurantNameEdit"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_border"
+                android:minHeight="55dp"
+                android:padding="10dp"></EditText>
 
             <TextView
                 android:id="@+id/orarRestaurantLabel"
@@ -108,6 +108,7 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_border"
+                android:inputType="number"
                 android:minHeight="55dp"
                 android:padding="10dp"></EditText>
 
@@ -127,9 +128,8 @@
             <TextView
                 android:id="@+id/hiddenLinkTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:visibility="gone" />
+                android:layout_height="5dp"
+                android:visibility="invisible" />
         </LinearLayout>
     </ScrollView>
 
