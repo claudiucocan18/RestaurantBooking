@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/NumeRestaurantLabel"
+                android:id="@+id/numeRestaurantLabel"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
@@ -32,7 +32,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/AddRestaurantNameEdit"
+                android:id="@+id/addRestaurantNameEdit"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_border"
@@ -40,7 +40,7 @@
                 android:padding="10dp"></EditText>
 
             <TextView
-                android:id="@+id/PozaRestaurantLabel"
+                android:id="@+id/pozaRestaurantLabel"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -54,10 +54,11 @@
                 android:layout_width="350dp"
                 android:layout_height="175dp"
                 android:background="#ECEBEB"
+                android:scaleType="center"
                 android:src="@drawable/ic_baseline_add_box_24" />
 
             <TextView
-                android:id="@+id/OrarRestaurantLabel"
+                android:id="@+id/orarRestaurantLabel"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -67,7 +68,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/AddOrarEdit"
+                android:id="@+id/addOrarEdit"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_border"
@@ -75,7 +76,7 @@
                 android:padding="10dp"></EditText>
 
             <TextView
-                android:id="@+id/AdresaRestaurantLabel"
+                android:id="@+id/adresaRestaurantLabel"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -85,7 +86,25 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/AddAdresaEdit"
+                android:id="@+id/addAdresaEdit"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_border"
+                android:minHeight="55dp"
+                android:padding="10dp"></EditText>
+
+            <TextView
+                android:id="@+id/numarLocuriLabel"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Număr de locuri"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/addNumarLocuriEdit"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_border"
@@ -93,7 +112,7 @@
                 android:padding="10dp"></EditText>
 
             <Button
-                android:id="@+id/addRestauranttButton"
+                android:id="@+id/addRestaurantButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -104,6 +123,13 @@
                 android:textSize="16sp">
 
             </Button>
+
+            <TextView
+                android:id="@+id/hiddenLinkTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 

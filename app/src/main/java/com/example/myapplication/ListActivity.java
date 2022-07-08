@@ -178,18 +178,18 @@ public class ListActivity extends AppCompatActivity {
 
 
         Restaurant restaurant2= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
-                ,"w",3,"e","d");
+                ,"w",3,"e","d","defaultManager1@yahoo.com");
         listaRestaurante.add(restaurant2);
 
         Restaurant restaurant3= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/restaurant-and-bar-logo-and-element_173667-original%20(1).jpg?alt=media&token=4d6d7893-b26c-484a-a279-652bd6c93d0c"
-                ,"west",3,"e","d");
+                ,"west",3,"e","d","defaultManager2@yahoo.com");
         listaRestaurante.add(restaurant3);
         Restaurant restaurant4= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
-                ,"w",3,"e","d");
+                ,"w",3,"e","d","defaultManager3@yahoo.com");
         listaRestaurante.add(restaurant4);
 
         Restaurant restaurant5= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/restaurant-and-bar-logo-and-element_173667-original%20(1).jpg?alt=media&token=4d6d7893-b26c-484a-a279-652bd6c93d0c"
-                ,"west",5,"e","d");
+                ,"west",5,"e","d","defaultManager4@yahoo.com");
         listaRestaurante.add(restaurant3);
 
 

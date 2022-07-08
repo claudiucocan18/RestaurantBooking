@@ -13,19 +13,26 @@ String nume;
 int nr_locuri;
 String orar;
 String adresa;
+String manager;
 
 
     public Restaurant() {
-
+        this.imgURL = "";
+        this.nume ="";
+        this.nr_locuri = 0;
+        this.orar = "";
+        this.adresa = "";
+        this.manager = "";
     }
 
-    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String adresa) {
+    public Restaurant(String imgURL, String nume, int nr_locuri, String orar, String adresa, String manager) {
         //6
         this.imgURL = imgURL;
         this.nume = nume;
         this.nr_locuri = nr_locuri;
         this.orar = orar;
         this.adresa = adresa;
+        this.manager = manager;
 
     }
 
@@ -93,6 +100,15 @@ String adresa;
         this.imgURL = imgURL;
     }
 
+    public String getManager() {
+        return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
+    }
+
+
 
     @Override
     public String toString() {
@@ -104,6 +120,7 @@ String adresa;
                 ", adresa='" + adresa + '\'' +
                 '}';
     }
+
 
     @Override
     public int describeContents() {
@@ -117,5 +134,6 @@ String adresa;
         parcel.writeInt(nr_locuri);
         parcel.writeString(orar);
         parcel.writeString(adresa);
+        parcel.writeString(manager);
     }
 }
