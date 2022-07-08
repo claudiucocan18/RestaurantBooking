@@ -148,7 +148,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
 
                                         hiddenLinkTextView.setText(s);
 
-                                        dc.getDocument().getReference().update("imgURL", s);
+                                        //dc.getDocument().getReference().update("imgURL", s);
                                     }
 
                                     imageSelector.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -250,7 +250,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
                                                     dc.getDocument().getReference().update("adresa", strAdresa);
                                                     dc.getDocument().getReference().update("nr_locuri", Integer.valueOf(strNumarLocuri));
                                                     dc.getDocument().getReference().update("imgURL", strlinkImagine);
-                                                    Toast.makeText(ManagerHomeActivity.this, "Restaurantul a fost editat", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(ManagerHomeActivity.this, "Datele au fost salvate", Toast.LENGTH_SHORT).show();
 
                                                 }
                                             }
