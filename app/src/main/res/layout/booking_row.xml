@@ -77,6 +77,16 @@
 
         <Space
             android:layout_width="match_parent"
+            android:layout_height="2dp" />
+
+        <TextView
+            android:id="@+id/textStareRez"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pending" />
+
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="10dp" />
 
         <Button

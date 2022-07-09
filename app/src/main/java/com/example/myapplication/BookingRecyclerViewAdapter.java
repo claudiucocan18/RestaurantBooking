@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,8 +54,23 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
         holder.textRezOra.setText(listaRezervari.get(position).getOra());
         holder.textRezData.setText(listaRezervari.get(position).getData());
         holder.textRezAdresa.setText(listaRezervari.get(position).getAdresaRestaurant());
+        holder.textStareRez.setText(listaRezervari.get(position).getStare());
 
 
+        switch (holder.textStareRez.getText().toString()){
+            case "Pending":{
+                holder.textStareRez.setTextColor(Color.parseColor("#e8b82a"));
+                break;
+            }
+            case "Approved":{
+                holder.textStareRez.setTextColor(Color.parseColor("#17ad03"));
+                break;
+            }
+            case "Denied":{
+                holder.textStareRez.setTextColor(Color.parseColor("#a10015"));
+                break;
+            }
+        }
 
     }
 
@@ -66,7 +82,8 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textRezNume, textRezNrPersoane, textRezOra, textRezData, textRezAdresa;
+        TextView textRezNume, textRezNrPersoane, textRezOra, textRezData,
+                textRezAdresa,textStareRez;
         Button butonAnulareRezervare;
 
 
@@ -78,7 +95,10 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
             textRezOra= itemView.findViewById(R.id.textRezOra) ;
             textRezData = itemView.findViewById(R.id.textRezData) ;
             textRezAdresa = itemView.findViewById(R.id.textRezAdresa);
+            textStareRez = itemView.findViewById(R.id.textStareRez);
             butonAnulareRezervare = itemView.findViewById(R.id.butonAnulareRezervare);
+
+
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("Rezervare");
 
