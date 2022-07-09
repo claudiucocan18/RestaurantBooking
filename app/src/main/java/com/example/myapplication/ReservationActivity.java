@@ -48,15 +48,12 @@ public class ReservationActivity extends AppCompatActivity {
     Button butonRezerva;
 
 
-    Rezervare rezervare = new Rezervare();
+    Rezervare rezervare;// = new Rezervare();
     DaoRezervare daoRezervare = new DaoRezervare();
-    Rezervare rez = new Rezervare();
 
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Rezervare");
-
-
 
 
     @Override
@@ -158,7 +155,6 @@ public class ReservationActivity extends AppCompatActivity {
                 Rezervare rezervare = new Rezervare(restaurant.nume, data, restaurant.adresa, ora, nrPersoane, user);
                 daoRezervare.add(rezervare).addOnSuccessListener(suc->
                 {
-                    Toast.makeText(ReservationActivity.this, "Rezervare inregistrata cu succes!", Toast.LENGTH_SHORT).show();
                     Intent ConfirmationIntent = new Intent(view.getContext(),ConfirmationActivity.class);
                     startActivity(ConfirmationIntent);
                 });

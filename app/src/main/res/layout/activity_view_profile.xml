@@ -57,7 +57,7 @@
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/round_border"
-            android:inputType="textWebEmailAddress"
+            android:inputType="textPassword"
             android:gravity="center_vertical"
             android:hint="*********"
             android:paddingStart="10dp" />

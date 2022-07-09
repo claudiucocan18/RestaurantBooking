@@ -38,6 +38,6 @@
         android:background="@drawable/round_border"
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
-        android:text="Inapoi la ecranul principal"
+        android:text="Înapoi"
         android:textAllCaps="false" />
 </LinearLayout>

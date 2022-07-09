@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import java.util.Objects;
 
@@ -14,11 +13,18 @@ public class Rezervare {
     String ora;
     String nrPersoane;
     String user;
-    Boolean aprobata;
+    String stare;
     String key;
 
     public Rezervare() {
-
+        this.numeRestaurant = "";
+        this.data = "";
+        this.adresaRestaurant = "";
+        this.nrPersoane = "";
+        this.ora = "";
+        this.stare ="";
+        this.user="";
+        this.key="";
     }
 
     public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user) {
@@ -27,7 +33,7 @@ public class Rezervare {
         this.adresaRestaurant = adresaRestaurant;
         this.nrPersoane = nrPersoane;
         this.ora = ora;
-        this.aprobata=false;
+        this.stare ="Pending approval";
         this.user=user;
         this.key="default";
     }
@@ -38,7 +44,7 @@ public class Rezervare {
         this.adresaRestaurant = adresaRestaurant;
         this.nrPersoane = nrPersoane;
         this.ora = ora;
-        this.aprobata=false;
+        this.stare ="Pending approval";
         this.user=user;
         this.key=key;
 
@@ -51,8 +57,7 @@ public class Rezervare {
         ora = in.readString();
         nrPersoane = in.readString();
         user = in.readString();
-        byte tmpAprobata = in.readByte();
-        aprobata = tmpAprobata == 0 ? null : tmpAprobata == 1;
+        stare = in.readString();
     }
 
 
@@ -104,12 +109,12 @@ public class Rezervare {
         this.user = user;
     }
 
-    public Boolean getAprobata() {
-        return aprobata;
+    public String getStare() {
+        return stare;
     }
 
-    public void setAprobata(Boolean aprobata) {
-        this.aprobata = aprobata;
+    public void setStare(String stare) {
+        this.stare = stare;
     }
 
     public String getKey() {
@@ -137,7 +142,7 @@ public class Rezervare {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rezervare rezervare = (Rezervare) o;
-        return Objects.equals(numeRestaurant, rezervare.numeRestaurant) && Objects.equals(data, rezervare.data) && Objects.equals(adresaRestaurant, rezervare.adresaRestaurant) && Objects.equals(ora, rezervare.ora) && Objects.equals(nrPersoane, rezervare.nrPersoane) && Objects.equals(user, rezervare.user) && Objects.equals(aprobata, rezervare.aprobata);
+        return Objects.equals(numeRestaurant, rezervare.numeRestaurant) && Objects.equals(data, rezervare.data) && Objects.equals(adresaRestaurant, rezervare.adresaRestaurant) && Objects.equals(ora, rezervare.ora) && Objects.equals(nrPersoane, rezervare.nrPersoane) && Objects.equals(user, rezervare.user) && Objects.equals(stare, rezervare.stare);
     }
 
 }

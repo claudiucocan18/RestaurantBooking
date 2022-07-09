@@ -86,13 +86,13 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
                 @Override
                 public void onClick(View view) {
                     Rezervare r = listaRezervari.get(BookingRecyclerViewAdapter.MyViewHolder.this.getLayoutPosition());
-
+                    System.out.println(r);
 
                     myRef.getRef().addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                                if(postSnapshot.getKey() == r.getKey())
+                                if(postSnapshot.getKey() == r.getKey())//puteam pune if null
                                 {
                                     postSnapshot.getRef().removeValue();
                                     listaRezervari.removeAll(listaRezervari);

@@ -27,6 +27,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
     String ora;
     String nrPersoane;
     String user;
+    String stare;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
@@ -93,6 +94,12 @@ public class ViewBookingsActivity extends AppCompatActivity {
                                 break;
                             }
 
+                            case "stare":{
+                                //rez.setUser(ds.getValue().toString());
+                                stare=ds.getValue().toString();
+                                break;
+                            }
+
                             default: break;
 
                         }
@@ -101,7 +108,10 @@ public class ViewBookingsActivity extends AppCompatActivity {
 
                      if(mAuth.getCurrentUser().getEmail().equals(user))
                         {
-                            listaRez.add(new Rezervare(numeRestaurant, data, adresaRestaurant, ora, nrPersoane, user, postSnapshot.getKey()));
+                            Rezervare rezervareCitita = new Rezervare(numeRestaurant, data, adresaRestaurant, ora, nrPersoane, user, postSnapshot.getKey());
+                            rezervareCitita.setStare(stare);
+                            listaRez.add(rezervareCitita);
+                            System.out.println(rezervareCitita);
                         }
                 }
 
