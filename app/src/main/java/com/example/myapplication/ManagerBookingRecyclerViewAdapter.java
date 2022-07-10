@@ -1,14 +1,18 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +41,6 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
     public ManagerBookingRecyclerViewAdapter(Context context, ArrayList<Rezervare> listaRezervari) {
         this.context = context;
         this.listaRezervari = listaRezervari;
-
     }
 
     @NonNull
@@ -77,6 +80,13 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
             }
         }
 
+        if(listaRezervari.get(position).getStare().equals("Approved")
+                ||listaRezervari.get(position).getStare().equals("Denied")){
+            holder.butonManagerAprobareRezervare.setVisibility(View.GONE);
+            holder.butonManagerRespingeRezervare.setVisibility(View.GONE);
+
+        }
+
     }
 
     @Override
@@ -103,25 +113,14 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
             textManagerRezNrPersoane = itemView.findViewById(R.id.textManagerRezNrPersoane);
             textStare = itemView.findViewById(R.id.textStare);
 
-
-
             butonManagerRespingeRezervare = itemView.findViewById(R.id.butonManagerRespingeRezervare);
             butonManagerAprobareRezervare = itemView.findViewById(R.id.butonManagerAprobareRezervare);
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("Rezervare");
-
+            DatabaseReference myRef2 = database.getReference("Rezervare");
 // butoanele pentru aprobarea/respingerea rezervarii de catre manager
 
-            butonManagerRespingeRezervare.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Rezervare r = listaRezervari.get(ManagerBookingRecyclerViewAdapter.MyViewHolder.this.getLayoutPosition());
-
-
-                }
-            });
 
             butonManagerAprobareRezervare.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -129,45 +128,20 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
 
                     Rezervare r2 = listaRezervari.get(ManagerBookingRecyclerViewAdapter.MyViewHolder.this.getLayoutPosition());
 
-                        myRef.addChildEventListener(new ChildEventListener() {
-                                    @Override
-                                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                                    }
-
-                                    @Override
-                                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                                    }
-
-                                    @Override
-                                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                                    }
-
-                                    @Override
-                                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
-                                    }
-                                });
-
-                                myRef.getRef().addValueEventListener(new ValueEventListener() {
+                    myRef.getRef().addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                                    if(postSnapshot.getKey() == r2.getKey())//puteam pune if null
+                                    if(postSnapshot.getKey() == r2.getKey())//puteam pune if !null
                                     {
 
                                         Map<String, Object> camp = new HashMap<String,Object>();
                                         camp.put("stare", "Approved");
                                         listaRezervari.removeAll(listaRezervari);
                                         postSnapshot.getRef().updateChildren(camp);
-                                        goToLoginActivity(view.getContext());
+                                        refreshBookingActivity(view.getContext());
+                                        /*butonManagerAprobareRezervare.setVisibility(View.INVISIBLE);
+                                        butonManagerRespingeRezervare.setVisibility(View.INVISIBLE);*/
 
                                     }
                                 }
@@ -182,15 +156,76 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
                 }
             });
 
+            butonManagerRespingeRezervare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view2) {
+
+                    Rezervare r3 = listaRezervari.get(ManagerBookingRecyclerViewAdapter.MyViewHolder.this.getLayoutPosition());
+
+                    myRef2.getRef().addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                                if(postSnapshot.getKey() == r3.getKey())//puteam pune if null
+                                {
+
+                                    Map<String, Object> camp2 = new HashMap<String,Object>();
+                                    camp2.put("stare", "Denied");
+                                    listaRezervari.removeAll(listaRezervari);
+                                    postSnapshot.getRef().updateChildren(camp2);
+                                    refreshBookingActivity(view2.getContext());
+                                   // new RefreshTask.execute(Void, Void, false);
+
+
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                }
+            });
+
+
 
         }
     }
 
-    public static void goToLoginActivity(Context mContext) {
+    public static void refreshBookingActivity(Context mContext) {
         Intent refreshRezStateIntent = new Intent(mContext, ManagerBookingsActivity.class);
         refreshRezStateIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         mContext.startActivity(refreshRezStateIntent);
 
+
     }
+
+    public class RefreshTask extends AsyncTask<Void, Void, Void>
+    {
+        @Override
+        protected Void doInBackground(Void... params)
+        {
+            while (!isCancelled())
+            {
+                //Getting data from server
+                SystemClock.sleep(1000);
+            }
+            return null;
+        }
+
+       /* @Override
+        protected void onPostExecute(Void result)
+        {
+            super.onPostExecute(result);
+
+            Intent refreshRezStateIntent = new Intent(context, ManagerBookingsActivity.class);
+            refreshRezStateIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            context.startActivity(refreshRezStateIntent);
+        }*/
+    }
+
 
 }

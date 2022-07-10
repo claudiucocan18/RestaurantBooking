@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyApplication.Splashscreen" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- <item name="android:windowSplashScreenBackground">@color/white</item>-->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_baseline_bookmarks_24
+        </item>
+
+    </style>
+
+</resources>
