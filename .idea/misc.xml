@@ -8,11 +8,18 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/cust_border.xml" value="0.144" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/custom_border.xml" value="0.152" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/default_vector_placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_bookmarks_24.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_fastfood_24.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_baseline_restaurant_24.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_launcher_rest_pic_placeholder_background.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border.xml" value="0.142" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border_red_button.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/splash.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_confirmation.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_list.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
@@ -34,6 +41,13 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/recycler_view_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/reservation_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/test.xml" value="0.20697463768115942" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_rest_pic_placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_rest_pic_placeholder2.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_rest_pic_placeholder2_round.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_rest_pic_placeholder_round.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_restaurant_placeholder.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/mipmap-anydpi-v26/ic_restaurant_placeholder_round.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/claudiu.cocan/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/cocan.c/AndroidStudioProjects/MyApplication3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />

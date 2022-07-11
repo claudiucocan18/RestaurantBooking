@@ -34,7 +34,9 @@
             android:exported="false" />
         <activity
             android:name=".ListActivity"
+
             android:exported="true"> <!-- was false -->
+            <!--android:theme="@style/Theme.MyApplication.Splashscreen"-->
 
         </activity>
         <activity

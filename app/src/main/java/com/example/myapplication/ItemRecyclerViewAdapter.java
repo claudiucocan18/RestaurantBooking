@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +29,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
     private static final String TAG ="ItemRecyclerViewAdapter";
     Context context;
     public List<Restaurant> listaRestaurante;
+
 
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -65,7 +67,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         StorageReference storageRef;//image storage
        // storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com")
         Picasso.get().load(listaRestaurante.get(position).getImgURL())
-                .placeholder(R.drawable.default_vector_placeholder)
+                .placeholder(R.mipmap.ic_restaurant_placeholder_foreground)
                 .into(holder.imageView3);
 
     }
@@ -76,6 +78,8 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         return listaRestaurante.size();
 
     }
+
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView textNrLocuri, textNume, textOrar, textZona, textAdresa;
@@ -119,5 +123,6 @@ buttonRezerva.setOnClickListener(new View.OnClickListener() {
 
     }
 
-    }
+
+}
 

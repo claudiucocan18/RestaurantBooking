@@ -74,11 +74,12 @@ public class SignUpActivity extends AppCompatActivity {
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            //pe ecran se vede textul de la CheckBox, nu de la TextView
                 if(checkBox.isChecked())
                 {
                     switchStateText.setText("Manager");
                     cuiEdit.setVisibility(View.VISIBLE);
+
 
                 }
                 else
