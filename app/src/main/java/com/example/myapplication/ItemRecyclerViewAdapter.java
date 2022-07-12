@@ -67,7 +67,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         StorageReference storageRef;//image storage
        // storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com")
         Picasso.get().load(listaRestaurante.get(position).getImgURL())
-                .placeholder(R.mipmap.ic_restaurant_placeholder_foreground)
+                .placeholder(R.mipmap.ic_p_holder_foreground)
                 .into(holder.imageView3);
 
     }
