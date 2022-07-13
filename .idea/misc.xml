@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable-v24/round_border_top_left.xml" value="0.113" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/cardview_border.xml" value="0.2045" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/cust_border.xml" value="0.144" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/custom_border.xml" value="0.152" />
@@ -35,18 +36,19 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_bookings.xml" value="0.2" />
-        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_home.xml" value="0.2" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_home.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_view_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_reservation.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_reservation_confirmation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_sms_verification.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_bookings.xml" value="0.2" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_bookings.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_view_profile.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/booking_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/defwd.xml" value="0.20697463768115942" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/frfs.xml" value="0.19074074074074074" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/gt.xml" value="0.190625" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/manager_booking_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/recycler_view_row.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/reservation_row.xml" value="0.2" />

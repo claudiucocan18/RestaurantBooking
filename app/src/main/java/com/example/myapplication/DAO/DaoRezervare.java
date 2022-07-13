@@ -1,5 +1,6 @@
-package com.example.myapplication;
+package com.example.myapplication.DAO;
 
+import com.example.myapplication.entities.Rezervare;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

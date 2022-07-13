@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Adaptors;
 
 import android.database.DataSetObserver;
 import android.view.View;

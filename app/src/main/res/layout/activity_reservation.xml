@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:isScrollContainer="true"
-    tools:context=".ReservationActivity">
+    tools:context=".Activities.ReservationActivity">
 
     <ScrollView
         android:layout_width="match_parent"

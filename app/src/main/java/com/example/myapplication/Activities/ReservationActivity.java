@@ -1,12 +1,10 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,13 +16,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.DAO.DaoRezervare;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Restaurant;
+import com.example.myapplication.entities.Rezervare;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
@@ -33,7 +31,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 public class ReservationActivity extends AppCompatActivity {
 
@@ -85,9 +82,9 @@ public class ReservationActivity extends AppCompatActivity {
         user = mAuth.getCurrentUser().getEmail();
         if(user==null) {user="Anonymous";}
 
-        textViewNume.setText(restaurant.nume);
-        textViewAdresa.setText(restaurant.adresa);
-        textViewOrar.setText(restaurant.orar);
+        textViewNume.setText(restaurant.getNume());
+        textViewAdresa.setText(restaurant.getAdresa());
+        textViewOrar.setText(restaurant.getOrar());
 
         Picasso.get().load(restaurant.getImgURL())
                 .placeholder(R.drawable.default_vector_placeholder)
@@ -161,7 +158,7 @@ public class ReservationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!editTelefon.getText().toString().isEmpty()){
                     telefon = editTelefon.getText().toString();
-                    Rezervare rezervare = new Rezervare(restaurant.nume, data, restaurant.adresa, ora, nrPersoane, user, telefon);
+                    Rezervare rezervare = new Rezervare(restaurant.getNume(), data, restaurant.getAdresa(), ora, nrPersoane, user, telefon);
                     daoRezervare.add(rezervare).addOnSuccessListener(suc ->
                     {
                         Intent ConfirmationIntent = new Intent(view.getContext(), ConfirmationActivity.class);

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
     void openSignActivity()
     {
-        Intent intent = new Intent(this,SignUpActivity.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 
     void openLogActivity()
     {
-        Intent intent2 = new Intent(this,LogInActivity.class);
+        Intent intent2 = new Intent(this, LogInActivity.class);
         startActivity(intent2);
     }
 

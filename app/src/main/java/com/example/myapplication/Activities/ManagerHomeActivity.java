@@ -1,14 +1,11 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Restaurant;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButtonToggleGroup;
@@ -279,14 +278,14 @@ public class ManagerHomeActivity extends AppCompatActivity {
                 {
                     case R.id.btnBookingsManager:{
 
-                        Intent BookingsManagerIntent = new Intent(group.getContext(),ManagerBookingsActivity.class);
+                        Intent BookingsManagerIntent = new Intent(group.getContext(), ManagerBookingsActivity.class);
                         BookingsManagerIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(BookingsManagerIntent);
                         break;
                     }
                     case R.id.btnProfileManager: {
 
-                        Intent ProfileManagerIntent = new Intent(group.getContext(),ManagerViewProfileActivity.class);
+                        Intent ProfileManagerIntent = new Intent(group.getContext(), ManagerViewProfileActivity.class);
                         ProfileManagerIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileManagerIntent);
                         break;

@@ -1,8 +1,7 @@
-package com.example.myapplication;
+package com.example.myapplication.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.util.List;
 
 
 public class Restaurant implements Parcelable  {

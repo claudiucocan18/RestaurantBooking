@@ -1,37 +1,29 @@
-package com.example.myapplication;
-
-import static android.content.ContentValues.TAG;
+package com.example.myapplication.Activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.phone.SmsRetriever;
-import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
+import com.example.myapplication.DBHelper;
+import com.example.myapplication.DAO.DaoUtilizator;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Utilizator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -94,27 +86,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
-/*switch1.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b==true)
-                {
-                    System.out.println("Manageeeeeeeer");
-                    switchStateText.setText("Manager");
-                }
-                if(b==false)
-                {
-                    System.out.println("Client");
-                    switchStateText.setText("Client");
-                }
 
-            }
-        });
-    }
-});*/
 
         signbtn.setOnClickListener(new View.OnClickListener() {
                                        @Override
@@ -184,7 +156,6 @@ public class SignUpActivity extends AppCompatActivity {
                             {
                                 Toast.makeText(SignUpActivity.this, "Incorrect email address ", Toast.LENGTH_SHORT).show();
                             }
-                            //Toast.makeText(SignUpActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -193,17 +164,12 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void enterApp() {
 
-        Intent intentSignUp= new Intent(this,MainActivity.class);
+        Intent intentSignUp= new Intent(this, MainActivity.class);
         startActivity(intentSignUp);
 
     }
 
     };
-
-
-
-
-
 
 
 

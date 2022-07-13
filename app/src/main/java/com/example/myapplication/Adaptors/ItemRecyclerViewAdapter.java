@@ -1,20 +1,20 @@
-package com.example.myapplication;
+package com.example.myapplication.Adaptors;
 
 import android.content.Context;
 
 import android.content.Intent;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Activities.ReservationActivity;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Restaurant;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -115,7 +115,7 @@ buttonRezerva.setOnClickListener(new View.OnClickListener() {
 
         Restaurant r = listaRestaurante.get(MyViewHolder.this.getLayoutPosition());
 
-        Intent intent3 = new Intent(view.getContext(),ReservationActivity.class);
+        Intent intent3 = new Intent(view.getContext(), ReservationActivity.class);
         intent3.putExtra("restaurant",(Parcelable) r );
 
         view.getContext().startActivity(intent3);

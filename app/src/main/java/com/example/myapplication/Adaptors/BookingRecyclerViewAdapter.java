@@ -1,9 +1,7 @@
-package com.example.myapplication;
+package com.example.myapplication.Adaptors;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Rezervare;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -114,7 +114,6 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
                 @Override
                 public void onClick(View view) {
                     Rezervare r = listaRezervari.get(BookingRecyclerViewAdapter.MyViewHolder.this.getLayoutPosition());
-                    System.out.println(r);
 
                     myRef.getRef().addValueEventListener(new ValueEventListener() {
                         @Override

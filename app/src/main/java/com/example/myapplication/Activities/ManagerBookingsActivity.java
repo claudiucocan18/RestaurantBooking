@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,9 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.myapplication.Adaptors.ManagerBookingRecyclerViewAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Restaurant;
+import com.example.myapplication.entities.Rezervare;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +28,6 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -58,12 +62,15 @@ public class ManagerBookingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_manager_bookings);
 
         mAuth = FirebaseAuth.getInstance();
-        RecyclerView managerBookingRecycler;
+        RecyclerView managerBookingRecycler = findViewById(R.id.bookingRecycler);
+        TextView textNoReservationsManager;
 
         btnGroupManager2 = findViewById(R.id.btnGroupManager2);
         btnHomeManager2 = findViewById(R.id.btnHomeManager2);
         btnBookingsManager2 = findViewById(R.id.btnBookingsManager2);
         btnProfileManager2 = findViewById(R.id.btnProfileManager2);
+        textNoReservationsManager = findViewById(R.id.textNoReservationsManager);
+
 //cautam restaurantul user-ului logat
 
         db.collection("restaurante")
@@ -164,6 +171,10 @@ public class ManagerBookingsActivity extends AppCompatActivity {
                         listaRez.add(rezervareIdentificata);
                     }
                 }
+                if(listaRez.isEmpty()){
+                    textNoReservationsManager.setVisibility(View.VISIBLE);
+                    managerBookingRecycler.setVisibility(View.GONE);
+                }
 
                 managerAdapterBooking.notifyDataSetChanged();
 
@@ -178,7 +189,7 @@ public class ManagerBookingsActivity extends AppCompatActivity {
             }
         });
 
-        managerBookingRecycler = findViewById(R.id.bookingRecycler);
+
         managerBookingRecycler.setAdapter(managerAdapterBooking);
         managerBookingRecycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -190,14 +201,14 @@ public class ManagerBookingsActivity extends AppCompatActivity {
                 {
                     case R.id.btnHomeManager2:{
 
-                        Intent BookingsManagerIntent2 = new Intent(group.getContext(),ManagerHomeActivity.class);
+                        Intent BookingsManagerIntent2 = new Intent(group.getContext(), ManagerHomeActivity.class);
                         BookingsManagerIntent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(BookingsManagerIntent2);
                         break;
                     }
                     case R.id.btnProfileManager2: {
 
-                        Intent ProfileManagerIntent2 = new Intent(group.getContext(),ManagerViewProfileActivity.class);
+                        Intent ProfileManagerIntent2 = new Intent(group.getContext(), ManagerViewProfileActivity.class);
                         ProfileManagerIntent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileManagerIntent2);
                         break;

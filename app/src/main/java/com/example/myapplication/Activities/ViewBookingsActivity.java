@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,8 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.myapplication.Adaptors.BookingRecyclerViewAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Rezervare;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -18,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ViewBookingsActivity extends AppCompatActivity {
     String adresaRestaurant;
@@ -39,6 +43,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
 
 
         MaterialButtonToggleGroup btnGroup2;
+        TextView textNoReservationsClient;
         Button btnHome2,btnBookings2, btnProfile2;
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -54,7 +59,8 @@ public class ViewBookingsActivity extends AppCompatActivity {
         btnHome2 = findViewById(R.id.btnHome2);
         btnBookings2 = findViewById(R.id.btnBookings2);
         btnProfile2 = findViewById(R.id.btnProfile2);
-        RecyclerView bookingRecycler;
+        textNoReservationsClient = findViewById(R.id.textNoReservationsClient);
+        RecyclerView  bookingRecycler = findViewById(R.id.bookingRecycler);
 
 
         myRef.getRef().addValueEventListener(new ValueEventListener() {
@@ -118,11 +124,15 @@ public class ViewBookingsActivity extends AppCompatActivity {
                             Rezervare rezervareCitita = new Rezervare(numeRestaurant, data, adresaRestaurant, ora, nrPersoane, user, telefon, postSnapshot.getKey());
                             rezervareCitita.setStare(stare);
                             listaRez.add(rezervareCitita);
-                            System.out.println(rezervareCitita);
                         }
                 }
+                if(listaRez.isEmpty()){
+                    textNoReservationsClient.setVisibility(View.VISIBLE);
+                    bookingRecycler.setVisibility(View.GONE);
+                }
 
-                adapterBooking.notifyDataSetChanged();
+                    adapterBooking.notifyDataSetChanged();
+
 
             }
 
@@ -144,14 +154,14 @@ public class ViewBookingsActivity extends AppCompatActivity {
                 {
                     case R.id.btnHome2:{
 
-                        Intent HomeIntent2 = new Intent(group.getContext(),ListActivity.class);
+                        Intent HomeIntent2 = new Intent(group.getContext(), ListActivity.class);
                         HomeIntent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(HomeIntent2);
                         break;
                     }
                     case R.id.btnProfile2: {
 
-                        Intent ProfileIntent2 = new Intent(group.getContext(),ViewProfileActivity.class);
+                        Intent ProfileIntent2 = new Intent(group.getContext(), ViewProfileActivity.class);
                         ProfileIntent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileIntent2);
                         break;
@@ -162,7 +172,7 @@ public class ViewBookingsActivity extends AppCompatActivity {
             }
         });
 
-        bookingRecycler = findViewById(R.id.bookingRecycler);
+
         bookingRecycler.setAdapter(adapterBooking);
         bookingRecycler.setLayoutManager(new LinearLayoutManager(this));
 

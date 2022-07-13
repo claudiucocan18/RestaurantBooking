@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 
 import androidx.annotation.Nullable;
@@ -7,14 +7,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import android.widget.Button;
-import androidx.core.splashscreen.SplashScreen;
 
+import com.example.myapplication.Adaptors.ItemRecyclerViewAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.entities.Restaurant;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -25,7 +26,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -37,7 +37,6 @@ public class ListActivity extends AppCompatActivity {
     //DatabaseReference myRef = database.getReference("https://restaurantappusers-adf69-default-rtdb.europe-west1.firebasedatabase.app/");
 
     RecyclerView recyclerView;
-    Context context;
     ArrayList<Restaurant> listaRestaurante = new ArrayList<Restaurant>();
     MaterialButtonToggleGroup btnGroup;
     Button btnHome, btnBookings,btnProfile;
@@ -58,7 +57,6 @@ public class ListActivity extends AppCompatActivity {
         btnProfile = findViewById(R.id.btnProfile);
 
 
-        Restaurant restaurant = new Restaurant();
 
         btnGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
@@ -67,14 +65,14 @@ public class ListActivity extends AppCompatActivity {
                 {
                     case R.id.btnBookings:{
 
-                        Intent BookingsIntent = new Intent(group.getContext(),ViewBookingsActivity.class);
+                        Intent BookingsIntent = new Intent(group.getContext(), ViewBookingsActivity.class);
                         BookingsIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(BookingsIntent);
                         break;
                     }
                     case R.id.btnProfile: {
 
-                        Intent ProfileIntent = new Intent(group.getContext(),ViewProfileActivity.class);
+                        Intent ProfileIntent = new Intent(group.getContext(), ViewProfileActivity.class);
                         ProfileIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileIntent);
                         break;
@@ -83,9 +81,6 @@ public class ListActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
 
         db.collection("restaurante")
@@ -166,8 +161,7 @@ public class ListActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adaugareRestaurant();
-        //List<Restaurant> lr = adapter.afisareListaRestaurante();
+        //adaugareRestaurant();
 
 
     }
@@ -175,9 +169,6 @@ public class ListActivity extends AppCompatActivity {
 
     private void adaugareRestaurant()
     {
-
-
-
 
         Restaurant restaurant2= new Restaurant("https://firebasestorage.googleapis.com/v0/b/restaurantappusers-adf69.appspot.com/o/default.png?alt=media&token=c37046ed-cb42-4c0a-8674-4269ff5034f5"
                 ,"w",3,"e","d","defaultManager1@yahoo.com");
@@ -194,8 +185,6 @@ public class ListActivity extends AppCompatActivity {
                 ,"west",5,"e","d","defaultManager4@yahoo.com");
         listaRestaurante.add(restaurant3);
 
-
     }
-
 
 }

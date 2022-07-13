@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -69,7 +70,7 @@ public class ViewProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-                Intent intentSignedOut = new Intent(view.getContext(),MainActivity.class);
+                Intent intentSignedOut = new Intent(view.getContext(), MainActivity.class);
                 startActivity(intentSignedOut);
             }
         });
@@ -106,14 +107,14 @@ public class ViewProfileActivity extends AppCompatActivity {
                 {
                     case R.id.btnHome3:{
 
-                        Intent HomeIntent3 = new Intent(group.getContext(),ListActivity.class);
+                        Intent HomeIntent3 = new Intent(group.getContext(), ListActivity.class);
                         HomeIntent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(HomeIntent3);
                         break;
                     }
                     case R.id.btnBookings3: {
 
-                        Intent ProfileIntent3 = new Intent(group.getContext(),ViewBookingsActivity.class);
+                        Intent ProfileIntent3 = new Intent(group.getContext(), ViewBookingsActivity.class);
                         ProfileIntent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(ProfileIntent3);
                         break;
