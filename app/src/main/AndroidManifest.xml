@@ -40,12 +40,6 @@
 
         </activity>
         <activity
-            android:name=".SmsVerificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".LogInActivity"
             android:exported="true" />
         <activity

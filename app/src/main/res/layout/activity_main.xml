@@ -10,54 +10,56 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="378dp"
-        android:layout_height="210dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@mipmap/ic_logo2_foreground" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:fontFamily="cursive"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/decalled_script"
         android:text="Welcome"
-
-        android:textColor="#89C6C3"
+        android:textColor="#1F2937"
         android:textSize="60sp"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/signbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:width="230dp"
-        android:fontFamily="@font/basic"
-        android:text="Create account"
+        android:background="@drawable/round_border"
+        android:fontFamily="@font/inter_bold"
+        android:text="Creare cont"
         android:textAllCaps="false"
-        android:textSize="20sp"
-        app:cornerRadius="200dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/logbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="15dp"
         android:width="230dp"
-        android:fontFamily="@font/basic"
-        android:text="Log in"
+        android:background="@drawable/round_border"
+        android:fontFamily="@font/inter_bold"
+        android:text="Conectare"
         android:textAllCaps="false"
-        android:textSize="20sp"
-        app:cornerRadius="200dp"
+        android:textSize="14sp"
+        app:backgroundTint="#89C6C3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/signbtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

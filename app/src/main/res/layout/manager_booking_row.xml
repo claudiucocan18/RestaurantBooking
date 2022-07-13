@@ -80,6 +80,15 @@
             android:layout_height="2dp" />
 
         <TextView
+            android:id="@+id/textTelefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
             android:id="@+id/textStare"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

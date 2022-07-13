@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -39,12 +41,14 @@ public class ReservationActivity extends AppCompatActivity {
     String ora;
     String nrPersoane;
     String user;
+    String telefon;
     List<Integer> vect = new ArrayList<Integer>();
 
     TextView textViewNume, textViewAdresa, textViewOrar;
     ImageView imageView4;
     CalendarView calendarView;
     Spinner spinnerMese, spinnerOre;
+    EditText editTelefon;
     Button butonRezerva;
 
 
@@ -64,8 +68,11 @@ public class ReservationActivity extends AppCompatActivity {
         Restaurant restaurant = (Restaurant) getIntent().getParcelableExtra("restaurant");
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
+
         spinnerMese = (Spinner) findViewById(R.id.spinnerMese);
         spinnerOre = (Spinner) findViewById(R.id.spinnerOre);
+        editTelefon = (EditText) findViewById(R.id.editTelefon);
+
         imageView4 = (ImageView) findViewById(R.id.imageView4);
         textViewNume = (TextView) findViewById(R.id.textViewNume);
         textViewAdresa = (TextView) findViewById(R.id.textViewAdresa);
@@ -127,6 +134,7 @@ public class ReservationActivity extends AppCompatActivity {
             }
         });
 
+
         calendarView.setMinDate(Calendar.getInstance().getTimeInMillis() );
 
         calendarView.setDate(Calendar.getInstance().getTimeInMillis());
@@ -151,13 +159,17 @@ public class ReservationActivity extends AppCompatActivity {
         butonRezerva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Rezervare rezervare = new Rezervare(restaurant.nume, data, restaurant.adresa, ora, nrPersoane, user);
-                daoRezervare.add(rezervare).addOnSuccessListener(suc->
-                {
-                    Intent ConfirmationIntent = new Intent(view.getContext(),ConfirmationActivity.class);
-                    startActivity(ConfirmationIntent);
-                });
+                if(!editTelefon.getText().toString().isEmpty()){
+                    telefon = editTelefon.getText().toString();
+                    Rezervare rezervare = new Rezervare(restaurant.nume, data, restaurant.adresa, ora, nrPersoane, user, telefon);
+                    daoRezervare.add(rezervare).addOnSuccessListener(suc ->
+                    {
+                        Intent ConfirmationIntent = new Intent(view.getContext(), ConfirmationActivity.class);
+                        startActivity(ConfirmationIntent);
+                    });
+                }else{
+                    Toast.makeText(ReservationActivity.this, "Introduceți numărul de telefon", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

@@ -20,7 +20,7 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
                 android:contentDescription="Restaurant image"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -29,53 +29,119 @@
                 android:id="@+id/textViewNume"
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
-                android:text="nume_restaurant" />
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:text="nume_restaurant"
+                android:textColor="#1F2937"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewAdresa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="adresa_restaurant" />
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="adresa_restaurant"
+                android:textColor="#6B7280"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewOrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="orar_restaurant" />
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="orar_restaurant"
+                android:textColor="#018786"
+                android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <CalendarView
                 android:id="@+id/calendarView"
-                android:layout_width="match_parent"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_border"/>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-                />
+            <TextView
+                android:id="@+id/textLabelMese"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Număr persoane" />
 
             <Spinner
                 android:id="@+id/spinnerMese"
-                android:layout_width="match_parent"
-                android:layout_height="69dp"
+                android:layout_width="360dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_border"
                 android:contentDescription="Select the number of guests"
                 android:padding="10dp"
                 android:spinnerMode="dialog" />
 
+            <TextView
+                android:id="@+id/textLabelOre"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Oră rezervare" />
+
             <Spinner
                 android:id="@+id/spinnerOre"
-                android:layout_width="match_parent"
-                android:layout_height="69dp"
+                android:layout_width="360dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_border"
                 android:contentDescription="Select the desired reservation time"
                 android:padding="10dp"
                 android:spinnerMode="dialog" />
 
+            <TextView
+                android:id="@+id/textLabelTelefon"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Oră rezervare" />
+
+            <EditText
+                android:id="@+id/editTelefon"
+                android:layout_width="360dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:hint="0799292414"
+                android:inputType="phone"
+                android:background="@drawable/round_border"
+                android:contentDescription="Select the desired reservation time"
+                android:padding="10dp"
+                android:spinnerMode="dialog" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <Button
                 android:id="@+id/butonRezerva"
-                android:layout_width="match_parent"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:insetTop="1dp"
                 android:insetBottom="1dp"
                 android:minHeight="49dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_border"
                 android:text="Rezervă"
                 tools:ignore="TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
 
         </LinearLayout>

@@ -15,6 +15,7 @@ public class Rezervare {
     String user;
     String stare;
     String key;
+    String telefon;
 
     public Rezervare() {
         this.numeRestaurant = "";
@@ -25,9 +26,10 @@ public class Rezervare {
         this.stare ="";
         this.user="";
         this.key="";
+        this.telefon="";
     }
 
-    public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user) {
+    public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user, String telefon) {
         this.numeRestaurant = numeRestaurant;
         this.data = data;
         this.adresaRestaurant = adresaRestaurant;
@@ -35,10 +37,11 @@ public class Rezervare {
         this.ora = ora;
         this.stare ="Pending approval";
         this.user=user;
+        this.telefon=telefon;
         this.key="default";
     }
 
-    public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user, String key) {
+    public Rezervare(String numeRestaurant, String data, String adresaRestaurant, String ora, String nrPersoane, String user, String telefon, String key) {
         this.numeRestaurant = numeRestaurant;
         this.data = data;
         this.adresaRestaurant = adresaRestaurant;
@@ -46,6 +49,7 @@ public class Rezervare {
         this.ora = ora;
         this.stare ="Pending approval";
         this.user=user;
+        this.telefon=telefon;
         this.key=key;
 
     }
@@ -123,6 +127,14 @@ public class Rezervare {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
     }
 
     @Override

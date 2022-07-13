@@ -98,7 +98,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
         if(s!=null){
 
             Picasso.get().load(s)
-                    .placeholder(R.drawable.default_vector_placeholder)
+                    .placeholder(R.mipmap.ic_p_holder_foreground)
                     .into(imageSelector);
 
         }
@@ -137,13 +137,13 @@ public class ManagerHomeActivity extends AppCompatActivity {
                                     addNumarLocuriEdit.setText(String.valueOf(rp.getNr_locuri()));
                                     if(s==null) {
                                         Picasso.get().load(rp.getImgURL())
-                                                .placeholder(R.drawable.default_vector_placeholder)
+                                                .placeholder(R.mipmap.ic_p_holder_foreground)
                                                 .into(imageSelector);
                                         hiddenLinkTextView.setText(rp.getImgURL());
                                     }
                                     else{
                                         Picasso.get().load(s)
-                                                .placeholder(R.drawable.default_vector_placeholder)
+                                                .placeholder(R.mipmap.ic_p_holder_foreground)
                                                 .into(imageSelector);
 
                                         hiddenLinkTextView.setText(s);

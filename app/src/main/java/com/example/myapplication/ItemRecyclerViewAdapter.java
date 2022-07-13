@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -59,13 +60,15 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         holder.textNume.setText(listaRestaurante.get(position).getNume());
 
         holder.textAdresa.setText(listaRestaurante.get(position).getAdresa());
-       // holder.textNrLocuri.setText(String.valueOf(listaRestaurante.get(position).getNr_locuri()));
+
         holder.textOrar.setText(listaRestaurante.get(position).getOrar());
+
         //holder.textZona.setText(listaRestaurante.get(position).getZona());
+        // holder.textNrLocuri.setText(String.valueOf(listaRestaurante.get(position).getNr_locuri()));
 
 
         StorageReference storageRef;//image storage
-       // storageRef = storage.getReferenceFromUrl("gs://restaurantappusers-adf69.appspot.com")
+
         Picasso.get().load(listaRestaurante.get(position).getImgURL())
                 .placeholder(R.mipmap.ic_p_holder_foreground)
                 .into(holder.imageView3);
@@ -82,24 +85,23 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textNrLocuri, textNume, textOrar, textZona, textAdresa;
-        ImageView imageView3;
+        TextView textNrLocuri, textNume, textOrar, textAdresa;
+        //TextView textNrLocuri, textZona;
+        ShapeableImageView imageView3;
         Button buttonRezerva;
-        //////////////////////
-        List<Restaurant> lrvh;
 
-        public List<Restaurant> getLrvh() {
-            return lrvh;
-        }
+
+
 
         public MyViewHolder(@NonNull View itemView, @NonNull List<Restaurant> listaRestaurante) {
             super(itemView);
 
-            lrvh = listaRestaurante;
+
             //textNrLocuri = itemView.findViewById(R.id.textNrLocuri) ;
+            //textZona = itemView.findViewById(R.id.textZona) ;
+
             textNume = itemView.findViewById(R.id.textNume) ;
             textOrar= itemView.findViewById(R.id.textOrar) ;
-            //textZona = itemView.findViewById(R.id.textZona) ;
             textAdresa = itemView.findViewById(R.id.textAdresa) ;
             imageView3 = itemView.findViewById(R.id.imageView3);
             buttonRezerva= itemView.findViewById(R.id.butonSpreRezervare);

@@ -5,6 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
     android:visibility="visible">
 
 
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:foregroundGravity="center_horizontal"
         android:visibility="visible"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,94 +32,72 @@
             android:gravity="start"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_width="390dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/RoundedCorner"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textNume"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textNume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_bold_imported"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#1F2937"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/textAdresa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#6B7280"
+                android:textSize="15sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textNrLocuri"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/textOrar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textZona"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/textAdresa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/textOrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#018786"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/butonSpreRezervare"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autoText="false"
-                android:backgroundTint="#89C6C3"
+                android:layout_width="390dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:background="@drawable/round_border"
                 android:elegantTextHeight="false"
-                android:text="Către rezervare"
-                android:textAlignment="viewEnd"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="Rezervă acum"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="16sp" />
+                android:textSize="13sp" />
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
     <!--

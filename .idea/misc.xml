@@ -18,12 +18,22 @@
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/ic_launcher_rest_pic_placeholder_background.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border.xml" value="0.142" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border2.xml" value="0.106" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/round_border_red_button.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/drawable/splash.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/akronim.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/alata.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/bevan.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/cantata_one.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/decalled_script.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/decalled_script_regular.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/inter_bold.xml" value="0.1" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/font/inter_medium.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_confirmation.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_list.xml" value="0.1" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
-        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_bookings.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_home.xml" value="0.2" />
         <entry key="..\:/Users/claudiu.cocan/AndroidStudioProjects/RestaurantApp/app/src/main/res/layout/activity_manager_view_profile.xml" value="0.25416666666666665" />

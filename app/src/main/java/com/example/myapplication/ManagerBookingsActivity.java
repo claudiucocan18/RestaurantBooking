@@ -50,7 +50,7 @@ public class ManagerBookingsActivity extends AppCompatActivity {
     String nrPersoane;
     String user;
     String stare;
-
+    String telefon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTitle("Fooder Manager");
@@ -143,6 +143,12 @@ public class ManagerBookingsActivity extends AppCompatActivity {
                                 break;
                             }
 
+                            case "telefon":{
+                                //rez.setUser(ds.getValue().toString());
+                                telefon=ds.getValue().toString();
+                                break;
+                            }
+
                             default: break;
 
                         }
@@ -151,7 +157,7 @@ public class ManagerBookingsActivity extends AppCompatActivity {
                     if(numeRestaurant.equals(restaurantGasit.getNume()))
                     {
                         Rezervare rezervareIdentificata =
-                                new Rezervare(numeRestaurant, data, adresaRestaurant, ora, nrPersoane, user, postSnapshot.getKey());
+                                new Rezervare(numeRestaurant, data, adresaRestaurant, ora, nrPersoane, user, telefon, postSnapshot.getKey());
 
                         rezervareIdentificata.setStare(stare);
 

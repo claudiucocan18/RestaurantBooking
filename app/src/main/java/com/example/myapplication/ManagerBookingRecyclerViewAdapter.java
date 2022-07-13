@@ -63,10 +63,11 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
         holder.textManagerRezOra.setText(listaRezervari.get(position).getOra());
         holder.textManagerRezNrPersoane.setText(listaRezervari.get(position).getNrPersoane());
         holder.textStare.setText(listaRezervari.get(position).getStare());
+        holder.textTelefon.setText(listaRezervari.get(position).getTelefon());
 
 
         switch (holder.textStare.getText().toString()){
-            case "Pending":{
+            case "Pending approval":{
                 holder.textStare.setTextColor(Color.parseColor("#e8b82a"));
                 break;
             }
@@ -99,7 +100,7 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView textManagerRezClient, textManagerRezAdresa,
                 textManagerRezData, textManagerRezOra,
-                textManagerRezNrPersoane, textStare;
+                textManagerRezNrPersoane, textStare, textTelefon;
         Button butonManagerRespingeRezervare, butonManagerAprobareRezervare;
 
 
@@ -112,6 +113,7 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
             textManagerRezOra = itemView.findViewById(R.id.textManagerRezOra) ;
             textManagerRezNrPersoane = itemView.findViewById(R.id.textManagerRezNrPersoane);
             textStare = itemView.findViewById(R.id.textStare);
+            textTelefon = itemView.findViewById(R.id.textTelefon);
 
             butonManagerRespingeRezervare = itemView.findViewById(R.id.butonManagerRespingeRezervare);
             butonManagerAprobareRezervare = itemView.findViewById(R.id.butonManagerAprobareRezervare);
@@ -140,8 +142,6 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
                                         listaRezervari.removeAll(listaRezervari);
                                         postSnapshot.getRef().updateChildren(camp);
                                         refreshBookingActivity(view.getContext());
-                                        /*butonManagerAprobareRezervare.setVisibility(View.INVISIBLE);
-                                        butonManagerRespingeRezervare.setVisibility(View.INVISIBLE);*/
 
                                     }
                                 }
@@ -174,8 +174,6 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
                                     listaRezervari.removeAll(listaRezervari);
                                     postSnapshot.getRef().updateChildren(camp2);
                                     refreshBookingActivity(view2.getContext());
-                                   // new RefreshTask.execute(Void, Void, false);
-
 
                                 }
                             }
@@ -216,15 +214,7 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
             return null;
         }
 
-       /* @Override
-        protected void onPostExecute(Void result)
-        {
-            super.onPostExecute(result);
 
-            Intent refreshRezStateIntent = new Intent(context, ManagerBookingsActivity.class);
-            refreshRezStateIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            context.startActivity(refreshRezStateIntent);
-        }*/
     }
 
 

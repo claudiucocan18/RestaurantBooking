@@ -55,10 +55,11 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
         holder.textRezData.setText(listaRezervari.get(position).getData());
         holder.textRezAdresa.setText(listaRezervari.get(position).getAdresaRestaurant());
         holder.textStareRez.setText(listaRezervari.get(position).getStare());
+        holder.textTelefonRez.setText(listaRezervari.get(position).getTelefon());
 
 
         switch (holder.textStareRez.getText().toString()){
-            case "Pending":{
+            case "Pending approval":{
                 holder.textStareRez.setTextColor(Color.parseColor("#e8b82a"));
                 break;
             }
@@ -72,6 +73,11 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
             }
         }
 
+        if(listaRezervari.get(position).getStare().equals("Denied")) {
+            holder.butonAnulareRezervare.setVisibility(View.GONE);
+
+        }
+
     }
 
     @Override
@@ -83,7 +89,7 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView textRezNume, textRezNrPersoane, textRezOra, textRezData,
-                textRezAdresa,textStareRez;
+                textRezAdresa,textStareRez, textTelefonRez;
         Button butonAnulareRezervare;
 
 
@@ -96,6 +102,8 @@ public class BookingRecyclerViewAdapter extends RecyclerView.Adapter<BookingRecy
             textRezData = itemView.findViewById(R.id.textRezData) ;
             textRezAdresa = itemView.findViewById(R.id.textRezAdresa);
             textStareRez = itemView.findViewById(R.id.textStareRez);
+            textTelefonRez = itemView.findViewById(R.id.textTelefonRez);
+
             butonAnulareRezervare = itemView.findViewById(R.id.butonAnulareRezervare);
 
 
