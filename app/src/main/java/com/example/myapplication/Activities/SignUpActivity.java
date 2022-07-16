@@ -71,20 +71,15 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     switchStateText.setText("Manager");
                     cuiEdit.setVisibility(View.VISIBLE);
-
-
                 }
                 else
                 {
                     switchStateText.setText("Client");
                     cuiEdit.setVisibility(View.GONE);
-
                 }
-
 
             }
         });
-
 
 
 
@@ -110,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (pass.length() >= 6) {
 
                             if( cuiEdit.getVisibility() !=View.GONE && TextUtils.isEmpty(cui)) {
-                                Toast.makeText(SignUpActivity.this, "Codul CUI este obligatoriu pentru manageri", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Codul CUI este obligatoriu pentru manager", Toast.LENGTH_SHORT).show();
                             }
                             else{
                             signUpUser(mAuth, user, pass);
@@ -151,11 +146,12 @@ public class SignUpActivity extends AppCompatActivity {
                         else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            if(!user.contains("@") || !user.contains(".com")
-                                    || (!user.contains("yahoo") || !user.contains("gmail")) )
+                            if(!user.contains("@") || !user.contains(".com"))
                             {
                                 Toast.makeText(SignUpActivity.this, "Incorrect email address ", Toast.LENGTH_SHORT).show();
                             }
+
+                            Toast.makeText(SignUpActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                         }
                     }
