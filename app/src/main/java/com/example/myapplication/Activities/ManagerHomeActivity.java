@@ -131,6 +131,7 @@ public class ManagerHomeActivity extends AppCompatActivity {
                                     gasit++;
                                     restaurantGasit=rp;
                                     addRestaurantNameEdit.setText(rp.getNume());
+                                    addRestaurantNameEdit.setFocusable(false);
                                     addOrarEdit.setText(rp.getOrar());
                                     addAdresaEdit.setText(rp.getAdresa());
                                     addNumarLocuriEdit.setText(String.valueOf(rp.getNr_locuri()));

@@ -131,6 +131,7 @@ public class LogInActivity extends AppCompatActivity {
 
                                         Toast.makeText(LogInActivity.this, "Email sau parolă incorectă",
                                                 Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(LogInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                                     }
                                 }

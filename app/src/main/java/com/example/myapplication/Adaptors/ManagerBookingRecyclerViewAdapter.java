@@ -191,6 +191,12 @@ public class ManagerBookingRecyclerViewAdapter extends RecyclerView.Adapter<Mana
     }
 
     public static void refreshBookingActivity(Context mContext) {
+
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Intent refreshRezStateIntent = new Intent(mContext, ManagerBookingsActivity.class);
         refreshRezStateIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         mContext.startActivity(refreshRezStateIntent);

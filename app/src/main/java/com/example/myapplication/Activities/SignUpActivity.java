@@ -160,6 +160,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void enterApp() {
 
+        Toast.makeText(this, "Contul a fost creat cu succes", Toast.LENGTH_SHORT).show();
         Intent intentSignUp= new Intent(this, MainActivity.class);
         startActivity(intentSignUp);
 
