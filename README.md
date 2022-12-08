@@ -3,8 +3,9 @@
 ## Welcome screen
 
 <p align="center">
-<img " src="https://user-images.githubusercontent.com/75011041/206464290-fd2e6165-8fb8-40a3-8ecf-e80053fbd3c8.png">
+<img " src="https://user-images.githubusercontent.com/75011041/206479238-09c90679-7933-4933-a75b-3eeb41c6c94d.jpg">
 </p>
+
 
 ## Sign up and Log in
 <p align="center" margin: 5px;>
