@@ -3,20 +3,21 @@
 ## Welcome screen
 
 <p align="center">
-<img " src="https://user-images.githubusercontent.com/75011041/206479238-09c90679-7933-4933-a75b-3eeb41c6c94d.jpg">
+<img " src="https://user-images.githubusercontent.com/75011041/206645188-2c2c37a3-5137-47d0-9683-601506c4edcc.jpg">
 </p>
 
 
 ## Sign up and Log in
 <p align="center" margin: 5px;>
-<img src="https://user-images.githubusercontent.com/75011041/206454029-10a5182e-6a6a-47ef-9e8e-cedfa160161b.png">
+<img src="https://user-images.githubusercontent.com/75011041/206644942-d40f3681-f48a-4a68-937a-e31096739cf0.jpg">
 </p>
                                                                                                                 
 ## Main screen
                                                                                                                 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/75011041/206464290-fd2e6165-8fb8-40a3-8ecf-e80053fbd3c8.png">
- &nbsp;
+ &nbsp; &nbsp; &nbsp;
 <img src="https://user-images.githubusercontent.com/75011041/206464290-fd2e6165-8fb8-40a3-8ecf-e80053fbd3c8.png">
 </p>
 
+                                                                                                                
