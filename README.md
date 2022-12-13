@@ -18,9 +18,11 @@
 <img src="https://user-images.githubusercontent.com/75011041/206650390-77f2729b-4a8e-4eb5-ad11-a95fe0a7d223.jpg">
 </p>                                                                                                                
                                                                                                                 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/75011041/206464290-fd2e6165-8fb8-40a3-8ecf-e80053fbd3c8.png">
- &nbsp; &nbsp; &nbsp;
-<img src="https://user-images.githubusercontent.com/75011041/206464290-fd2e6165-8fb8-40a3-8ecf-e80053fbd3c8.png">
-</p>
-
+## Restaurant view / booking screen
+ <p align="center">
+<img src="https://user-images.githubusercontent.com/75011041/207257207-5f554020-a1f1-47c5-87e2-770bd5467340.jpg">
+&nbsp &nbsp
+<img src="https://user-images.githubusercontent.com/75011041/207258160-e808da0a-bfac-462e-ad56-524c11304894.jpg">                                                                                                               
+                                                                                                           
+</p>                                                                                                                 
+                                                                                                                
